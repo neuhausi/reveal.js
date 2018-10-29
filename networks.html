@@ -1,0 +1,190 @@
+<!doctype html>
+<html>
+  <head>
+  
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>Networks</title>
+
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/black.css">
+
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="lib/css/zenburn.css">
+
+    <!-- CanvasXpress -->
+    
+    <link rel="stylesheet" href="./canvas/css/canvasXpress.css" type="text/css">;
+    <script type="text/javascript" src="./canvas/js/sprintf.min.js"></script>
+    <script type="text/javascript" src="./canvas/js/date.format.min.js"></script>
+    <script type="text/javascript" src="./canvas/js/conrec.min.js"></script>
+    <script type="text/javascript" src="./canvas/js/jLouvain.min.js"></script>
+    <script type="text/javascript" src="./canvas/js/FileSaverBlob.min.js"></script>
+    <script type="text/javascript" src="./canvas/js/numeric.cX.min.js"></script>
+    <script type="text/javascript" src="./canvas/js/canvas2svg.js"></script>
+    <script type="text/javascript" src="./canvas/js/genie.js"></script>
+    <script type="text/javascript" src="./canvas/js/dom-to-image.js"></script>
+    <script type="text/javascript" src="./canvas/js/build/canvasXpress.init.js"></script>
+    <script type="text/javascript" src="./canvas/js/build/canvasXpress.globals.js"></script>
+    <script type="text/javascript" src="./canvas/js/build/canvasXpress.dom.js"></script>
+    <script type="text/javascript" src="./canvas/js/build/canvasXpress.interface.js"></script>
+    <script type="text/javascript" src="./canvas/js/build/canvasXpress.config.js"></script>
+    <script type="text/javascript" src="./canvas/js/build/canvasXpress.text.js"></script>
+    <script type="text/javascript" src="./canvas/js/build/canvasXpress.time.js"></script>
+    <script type="text/javascript" src="./canvas/js/build/canvasXpress.color.js"></script>
+    <script type="text/javascript" src="./canvas/js/build/canvasXpress.attributes.js"></script>
+    <script type="text/javascript" src="./canvas/js/build/canvasXpress.algorithm.js"></script>
+    <script type="text/javascript" src="./canvas/js/build/canvasXpress.primitives.js"></script>
+    <script type="text/javascript" src="./canvas/js/build/canvasXpress.utilsGeneral.js"></script>
+    <script type="text/javascript" src="./canvas/js/build/canvasXpress.utilsPlot.js"></script>
+    <script type="text/javascript" src="./canvas/js/build/canvasXpress.utilsConfig.js"></script>
+    <script type="text/javascript" src="./canvas/js/build/canvasXpress.utils3d.js"></script>
+    <script type="text/javascript" src="./canvas/js/build/canvasXpress.utilsApi.js"></script>
+    <script type="text/javascript" src="./canvas/js/build/canvasXpress.utilsDimension.js"></script>
+    <script type="text/javascript" src="./canvas/js/build/canvasXpress.utils.js"></script>
+    <script type="text/javascript" src="./canvas/js/build/canvasXpress.legend.js"></script>
+    <script type="text/javascript" src="./canvas/js/build/canvasXpress.filter.js"></script>
+    <script type="text/javascript" src="./canvas/js/build/canvasXpress.cluster.js"></script>
+    <script type="text/javascript" src="./canvas/js/build/canvasXpress.sort.js"></script>
+    <script type="text/javascript" src="./canvas/js/build/canvasXpress.math.js"></script>
+    <script type="text/javascript" src="./canvas/js/build/canvasXpress.layout.js"></script>
+    <script type="text/javascript" src="./canvas/js/build/canvasXpress.viewport.js"></script>
+    <script type="text/javascript" src="./canvas/js/build/canvasXpress.menu.js"></script>
+    <script type="text/javascript" src="./canvas/js/build/canvasXpress.links.js"></script>
+    <script type="text/javascript" src="./canvas/js/build/canvasXpress.tooltip.js"></script>
+    <script type="text/javascript" src="./canvas/js/build/canvasXpress.toolbar.js"></script>
+    <script type="text/javascript" src="./canvas/js/build/canvasXpress.configurator.js"></script>
+    <script type="text/javascript" src="./canvas/js/build/canvasXpress.acknowlegments.js"></script>
+    <script type="text/javascript" src="./canvas/js/build/canvasXpress.code.js"></script>
+    <script type="text/javascript" src="./canvas/js/build/canvasXpress.bin.js"></script>
+    <script type="text/javascript" src="./canvas/js/build/canvasXpress.dataexplorer.js"></script>
+    <script type="text/javascript" src="./canvas/js/build/canvasXpress.datafilter.js"></script>
+    <script type="text/javascript" src="./canvas/js/build/canvasXpress.datatable.js"></script>
+    <script type="text/javascript" src="./canvas/js/build/canvasXpress.resizer.js"></script>
+    <script type="text/javascript" src="./canvas/js/build/canvasXpress.resizerAxis.js"></script>
+    <script type="text/javascript" src="./canvas/js/build/canvasXpress.motion.js"></script>
+    <script type="text/javascript" src="./canvas/js/build/canvasXpress.drag.js"></script>
+    <script type="text/javascript" src="./canvas/js/build/canvasXpress.key.js"></script>
+    <script type="text/javascript" src="./canvas/js/build/canvasXpress.select.js"></script>
+    <script type="text/javascript" src="./canvas/js/build/canvasXpress.dendrogram.js"></script>
+    <script type="text/javascript" src="./canvas/js/build/canvasXpress.canvas.js"></script>
+    <script type="text/javascript" src="./canvas/js/build/canvasXpress.cleanup.js"></script>
+    <script type="text/javascript" src="./canvas/js/build/canvasXpress.events.js"></script>
+    <script type="text/javascript" src="./canvas/js/build/canvasXpress.animation.js"></script>
+    <script type="text/javascript" src="./canvas/js/build/canvasXpress.example.js"></script>
+    <script type="text/javascript" src="./canvas/js/build/canvasXpress.data.js"></script>
+    <script type="text/javascript" src="./canvas/js/build/canvasXpress.dataUtils.js"></script>
+    <script type="text/javascript" src="./canvas/js/build/canvasXpress.random.js"></script>
+    <script type="text/javascript" src="./canvas/js/build/canvasXpress.fx.js"></script>
+    <script type="text/javascript" src="./canvas/js/build/canvasXpress.remote.js"></script>
+    <script type="text/javascript" src="./canvas/js/build/canvasXpress.graph.js"></script>
+    <script type="text/javascript" src="./canvas/js/build/canvasXpress.axis.js"></script>
+    <script type="text/javascript" src="./canvas/js/build/canvasXpress.pie.js"></script>
+    <script type="text/javascript" src="./canvas/js/build/canvasXpress.venn.js"></script>
+    <script type="text/javascript" src="./canvas/js/build/canvasXpress.correlation.js"></script>
+    <script type="text/javascript" src="./canvas/js/build/canvasXpress.scatter2d.js"></script>
+    <script type="text/javascript" src="./canvas/js/build/canvasXpress.scatter3d.js"></script>
+    <script type="text/javascript" src="./canvas/js/build/canvasXpress.onedplot.js"></script>
+    <script type="text/javascript" src="./canvas/js/build/canvasXpress.network.js"></script>
+    <script type="text/javascript" src="./canvas/js/build/canvasXpress.genome.js"></script>
+    <script type="text/javascript" src="./canvas/js/build/canvasXpress.circular.js"></script>
+    <script type="text/javascript" src="./canvas/js/build/canvasXpress.video.js"></script>
+    <script type="text/javascript" src="./canvas/js/build/canvasXpress.images.js"></script>
+    <script type="text/javascript" src="./canvas/js/build/canvasXpress.doc.js"></script>
+
+    <!-- Printing and PDF exports -->
+    <script>
+      var link = document.createElement( 'link' );
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+      document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
+    
+  </head>
+  
+  <body>
+  
+    <div class="reveal">
+      <div class="slides">
+        <section>
+          <h2>Point of View</h2>
+          <p>
+            Press <strong>ESC</strong> to enter the slide overview.
+          </p>
+          <div>
+            <img id="example" class="canvasxpress" width="200" class="example" src="https://canvasxpress.org/images/ex/Ex-bar-3.png" alt="Click for Interactive">
+          </div>
+        </section>
+        <section>Slide 1</section>
+        <section>Slide 2</section>
+      </div>
+    </div>
+
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.js"></script>
+
+    <script>
+
+      // More info https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+
+        transition: 'slide', // none/fade/slide/convex/concave/zoom,
+
+        // Zooming config
+        zoomKey: 'shift',
+        zoomLevel: 3,
+        
+        // Set to 1 for CanvasXpress to work properly
+        minScale: 1,
+        maxScale: 1,
+
+        dependencies: [
+          { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+          { src: 'plugin/search/search.js', async: true },
+          { src: 'plugin/zoom-js/zoom.js', async: true },
+          { src: 'plugin/notes/notes.js', async: true }
+        ]
+      });
+
+      Reveal.addEventListener( 'dblclick', function( event ) {
+        var rConfig = Reveal.getConfig();
+        var target = event.target;
+        var tagName = target.tagName.toLowerCase();
+        if (tagName == 'img' && target.className == 'canvasxpress') {
+          zoom.out();
+          var src = target.src;
+          var id = 'cX' + target.id;
+          var width = target.width;
+          var height = target.height;
+          var bounds = target.getBoundingClientRect();
+          var canvas = document.createElement('canvas');
+          canvas.id = id;
+          canvas.width = width;
+          canvas.height = height;
+          target.parentNode.style.position = 'absolute';
+          target.parentNode.style.left = ((rConfig.width * 0.5) - (width * 0.5)) + 'px'; 
+          target.parentNode.appendChild(canvas);
+          var cx = new CanvasXpress({
+            renderTo: id,
+            data: src
+          });
+          canvas.parentNode.focus();
+          target.style.display = 'none';
+        }
+      });
+
+    </script>
+    
+  </body>
+  
+</html>
