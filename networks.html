@@ -13,8 +13,16 @@
     <!-- Theme used for syntax highlighting of code -->
     <link rel="stylesheet" href="lib/css/zenburn.css">
 
-    <!-- CanvasXpress -->
+    <!-- Printing and PDF exports -->
+    <script>
+      var link = document.createElement( 'link' );
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+      document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
     
+    <!-- CanvasXpress -->        
     <link rel="stylesheet" href="./canvas/css/canvasXpress.css" type="text/css">;
     <script type="text/javascript" src="./canvas/js/sprintf.min.js"></script>
     <script type="text/javascript" src="./canvas/js/date.format.min.js"></script>
@@ -93,15 +101,6 @@
     <script type="text/javascript" src="./canvas/js/build/canvasXpress.images.js"></script>
     <script type="text/javascript" src="./canvas/js/build/canvasXpress.doc.js"></script>
 
-    <!-- Printing and PDF exports -->
-    <script>
-      var link = document.createElement( 'link' );
-      link.rel = 'stylesheet';
-      link.type = 'text/css';
-      link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
-      document.getElementsByTagName( 'head' )[0].appendChild( link );
-    </script>
-    
   </head>
   
   <body>
@@ -176,9 +175,9 @@
           target.parentNode.appendChild(canvas);
           var cx = new CanvasXpress({
             renderTo: id,
-            data: src
+            data: src,
+            hidden : true
           });
-          canvas.parentNode.focus();
           target.style.display = 'none';
         }
       });
