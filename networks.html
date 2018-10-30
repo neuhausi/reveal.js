@@ -172,13 +172,17 @@
           canvas.height = height;
           target.parentNode.style.position = 'absolute';
           target.parentNode.style.left = ((rConfig.width * 0.5) - (width * 0.5)) + 'px'; 
+          //target.parentNode.style.top = '-88px'; 
           target.parentNode.appendChild(canvas);
           var cx = new CanvasXpress({
             renderTo: id,
             data: src,
-            hidden : true
+            callback : function () {
+              setTimeout(function () {
+                target.style.display = 'none';
+              }, 1000);
+            }
           });
-          target.style.display = 'none';
         }
       });
 
