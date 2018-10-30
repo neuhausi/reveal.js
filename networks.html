@@ -113,7 +113,7 @@
             Press <strong>ESC</strong> to enter the slide overview.
           </p>
           <div>
-            <img id="example" class="canvasxpress" width="200" class="example" src="https://canvasxpress.org/images/ex/Ex-bar-3.png" alt="Click for Interactive">
+            <img id="example" class="canvasxpress" width="400" src="https://canvasxpress.org/images/ex/Ex-dotplot-1.png" alt="Click for Interactive">
           </div>
         </section>
         <section>Slide 1</section>
@@ -137,13 +137,18 @@
         transition: 'slide', // none/fade/slide/convex/concave/zoom,
 
         // Zooming config
-        zoomKey: 'shift',
+        zoomKey: 'alt',
         zoomLevel: 3,
         
         // Set to 1 for CanvasXpress to work properly
         minScale: 1,
         maxScale: 1,
 
+        // Keyboard
+        keyboard: {
+          27 : null
+        },
+        
         dependencies: [
           { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
           { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
@@ -155,34 +160,45 @@
         ]
       });
 
+      Reveal.addEventListener( 'click', function( event ) {
+      	if (event.altKey) {
+          var target = event.target;
+          var tagName = target.tagName.toLowerCase();
+          if (tagName == 'canvas' && target.className == 'CanvasXpress') {
+          	var id = target.id.replace('-events', '');
+          	var cx = CanvasXpress.$(id);
+            cx.cancelEvent(event);
+            cx.stopEvent(event);
+          }
+      	}
+      });
+      
       Reveal.addEventListener( 'dblclick', function( event ) {
         var rConfig = Reveal.getConfig();
         var target = event.target;
         var tagName = target.tagName.toLowerCase();
         if (tagName == 'img' && target.className == 'canvasxpress') {
           zoom.out();
-          var src = target.src;
-          var id = 'cX' + target.id;
-          var width = target.width;
-          var height = target.height;
-          var bounds = target.getBoundingClientRect();
           var canvas = document.createElement('canvas');
-          canvas.id = id;
-          canvas.width = width;
-          canvas.height = height;
-          target.parentNode.style.position = 'absolute';
-          target.parentNode.style.left = ((rConfig.width * 0.5) - (width * 0.5)) + 'px'; 
-          //target.parentNode.style.top = '-88px'; 
+          canvas.id = 'cX-' + target.id;
+          canvas.width = target.width;
+          canvas.height = target.height;          
+          canvas.style.position = 'absolute';
+          canvas.style.left = ((rConfig.width - target.width) / 2) + 'px';
           target.parentNode.appendChild(canvas);
+          target.style.position = 'absolute';
+          target.style.left = (((rConfig.width - target.width) / 2) - 4) +  'px';
+          target.style.top = '195px';
           var cx = new CanvasXpress({
-            renderTo: id,
-            data: src,
+            renderTo: 'cX-' + target.id,
+            data: target.src,
             callback : function () {
               setTimeout(function () {
                 target.style.display = 'none';
               }, 1000);
             }
           });
+          target.parentNode.lastChild.style.top = '-28px';
         }
       });
 
