@@ -22,7 +22,8 @@
       document.getElementsByTagName( 'head' )[0].appendChild( link );
     </script>
     
-    <!-- CanvasXpress -->        
+    <!-- CanvasXpress --> 
+    <!-- Must be specified last to avoid conflicts with CSS -->       
     <link rel="stylesheet" href="./canvas/css/canvasXpress.css" type="text/css">;
     <script type="text/javascript" src="./canvas/js/sprintf.min.js"></script>
     <script type="text/javascript" src="./canvas/js/date.format.min.js"></script>
@@ -113,7 +114,7 @@
             Press <strong>ESC</strong> to enter the slide overview.
           </p>
           <div>
-            <img id="example" class="canvasxpress" width="400" src="https://canvasxpress.org/images/ex/Ex-dotplot-1.png" alt="Click for Interactive">
+            <img id="example" class="canvasxpress" width="500" src="https://canvasxpress.org/images/ex/Ex-dotplot-1.png" alt="Click for Interactive">
           </div>
         </section>
         <section>Slide 1</section>
@@ -125,6 +126,20 @@
     <script src="js/reveal.js"></script>
 
     <script>
+    
+      var destroyCanvasXpressRestoreImage = function (event) {
+        var target = event.target;
+        var tagName = target.tagName.toLowerCase();
+        if (tagName == 'canvas' && target.className == 'CanvasXpress') {
+          var cid = target.id.replace('-events', '');
+          var iid = cid.replace('cX-', '').replace('-1', '');
+          var img = document.getElementById(iid);
+          if (img) {
+            img.style.display = 'block';
+            CanvasXpress.destroy(cid);
+          }
+        }
+      }    
 
       // More info https://github.com/hakimel/reveal.js#configuration
       Reveal.initialize({
@@ -140,7 +155,9 @@
         zoomKey: 'alt',
         zoomLevel: 3,
         
-        // Set to 1 for CanvasXpress to work properly
+        // Set for CanvasXpress to work properly
+        width: '100%',
+        height: '100%',
         minScale: 1,
         maxScale: 1,
 
@@ -160,34 +177,21 @@
         ]
       });
 
-      Reveal.addEventListener( 'click', function( event ) {
-      	if (event.altKey) {
-          var target = event.target;
-          var tagName = target.tagName.toLowerCase();
-          if (tagName == 'canvas' && target.className == 'CanvasXpress') {
-          	var id = target.id.replace('-events', '');
-          	var cx = CanvasXpress.$(id);
-            cx.cancelEvent(event);
-            cx.stopEvent(event);
-          }
-      	}
-      });
-      
       Reveal.addEventListener( 'dblclick', function( event ) {
-        var rConfig = Reveal.getConfig();
         var target = event.target;
         var tagName = target.tagName.toLowerCase();
         if (tagName == 'img' && target.className == 'canvasxpress') {
           zoom.out();
+          var width = target.parentNode.clientWidth;
           var canvas = document.createElement('canvas');
           canvas.id = 'cX-' + target.id;
           canvas.width = target.width;
           canvas.height = target.height;          
           canvas.style.position = 'absolute';
-          canvas.style.left = ((rConfig.width - target.width) / 2) + 'px';
+          canvas.style.left = ((width - target.width) / 2) + 'px';
           target.parentNode.appendChild(canvas);
           target.style.position = 'absolute';
-          target.style.left = (((rConfig.width - target.width) / 2) - 4) +  'px';
+          target.style.left = (((width - target.width) / 2) - 4) +  'px';
           target.style.top = '195px';
           var cx = new CanvasXpress({
             renderTo: 'cX-' + target.id,
