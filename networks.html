@@ -26,7 +26,7 @@
     
     <!-- CanvasXpress --> 
     <!-- Must be specified last to avoid conflicts with CSS -->       
-    <link rel="stylesheet" href="./canvas/css/canvasXpress.css" type="text/css">;
+    <link rel="stylesheet" href="./canvas/css/canvasXpress.css" type="text/css">
     <script type="text/javascript" src="./canvas/js/sprintf.min.js"></script>
     <script type="text/javascript" src="./canvas/js/date.format.min.js"></script>
     <script type="text/javascript" src="./canvas/js/conrec.min.js"></script>
@@ -123,22 +123,24 @@
           <ul>
             <li>Native - JSON object</li>
             <li>GML - <a href="https://en.wikipedia.org/wiki/Graph_Modelling_Language">Graph Modelling Language</a></li>
-            <li>XML</li>
-            <ul>
-              <li>GPML - <a href="https://www.wikipathways.org/index.php/WikiPathways">Wikipathways</a></li>
-              <li>KGML - <a href="https://www.kegg.jp/">Kegg</a></li> 
-              <li>XGML</li>
+            <li>XML
               <ul>
-                <li><a href="https://cytoscape.org/">Cytoscape</a></li>
-                <li><a href="https://clarivate.com/products/metacore/">Metabase</a></li>                
-              </ul> 
-            </ul>
+                <li>GPML - <a href="https://www.wikipathways.org/index.php/WikiPathways">Wikipathways</a></li>
+                <li>KGML - <a href="https://www.kegg.jp/">Kegg</a></li> 
+                <li>XGML
+                  <ul>
+                    <li><a href="https://cytoscape.org/">Cytoscape</a></li>
+                    <li><a href="https://clarivate.com/products/metacore/">Metabase</a></li>                
+                  </ul>
+                </li> 
+              </ul>
+            </li>
           </ul>
         </section>
         <section>
           <h3>Native JSON Format</h3>
           <pre>
-            <code class="hljs" style="width:30%; margin:auto; line-height:12px; font-size:medium; max-height:800px;">
+            <code class="hljs javascript" style="width:30%; margin:auto; line-height:12px; font-size:medium; max-height:800px;">
 var cX = new CanvasXpress("canvasId", {
       nodes: [
         {
@@ -183,7 +185,7 @@ var cX = new CanvasXpress("canvasId", {
         <section>
           <h2>All Other Data Formats Are Loaded From A URL</h2>
           <pre>
-            <code class="hljs" style="width:50%; margin:auto;">
+            <code class="hljs javascript" style="width:50%; margin:auto;">
 var cX = new CanvasXpress("canvasId",
     "https://path/to/file/hsa05222.xml", {
       graphType: "Network"
@@ -212,8 +214,21 @@ var cX = new CanvasXpress("canvasId",
           <p>
             Press <strong>ESC</strong> to enter the slide overview.
           </p>
-          <div>
-            <img id="example" class="canvasxpress" width="500" height="500" src="https://canvasxpress.org/images/ex/Ex-dotplot-1.png" alt="Click for Interactive">
+          <div style="position:relative; width:100%; height:100%; margin:auto;">
+            <div style="position:absolute; width:100%; top:0px; left:0px; margin:0px;">
+              <img style="margin:0px; border:0px;" id="example" class="canvasxpress" src="https://canvasxpress.org/images/ex/Ex-dotplot-1.png" alt="Click for Interactive">
+            </div>
+          </div>
+        </section>
+        <section>
+          <h2>Point of View</h2>
+          <p>
+            Press <strong>ESC</strong> to enter the slide overview.
+          </p>
+          <div style="position:relative; width:300px; height:300px; margin:0;">
+            <div style="position:absolute; width:100%; top:0px; left:0px; margin:0px;">
+              <img style="margin:0px; border:0px;" id="example" class="canvasxpress" src="https://canvasxpress.org/images/ex/Ex-dotplot-1.png" alt="Click for Interactive">
+            </div>
           </div>
         </section>
         <section>Slide 1</section>

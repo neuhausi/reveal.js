@@ -18,17 +18,22 @@
       var tagName = target.tagName.toLowerCase();
       if (tagName == 'img' && target.className == 'canvasxpress') {
         zoom.out();
-        var width = target.parentNode.clientWidth;
-        var canvas = document.createElement('canvas');
         var boundsT = target.getBoundingClientRect();
-        var boundsP = target.parentNode.getBoundingClientRect();
+        var boundsP = target.parentNode.getBoundingClientRect();        
+        var parent = target.parentNode.parentNode;
+        var div = document.createElement('div');
+        div.id = 'cX-Container-' + target.id;
+        div.style.position = "absolute"; 
+        div.style.width = "100%"; 
+        div.style.top = "-44px";
+        div.style.left = (boundsT.left - boundsP.left) + "px";
+        div.style.margin = "0px";
+        var canvas = document.createElement('canvas');
         canvas.id = 'cX-' + target.id;
-        canvas.width = target.width;
-        canvas.height = target.height;          
-        target.style.position = 'relative';
-        target.style.left = ((boundsT.left - target.width) + 2) + 'px';
-        target.style.top = '0px';
-        target.parentNode.appendChild(canvas);
+        canvas.width = target.clientWidth;
+        canvas.height = target.clientHeight;
+        div.appendChild(canvas);
+        parent.appendChild(div);
         var cx = new CanvasXpress({
           renderTo: 'cX-' + target.id,
           data: target.src,
@@ -51,7 +56,6 @@
             }, 1000);
           }
         });
-        target.parentNode.lastChild.style.top = -(boundsP.height + 25) + 'px';
       }
     });
 
