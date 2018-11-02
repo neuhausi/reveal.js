@@ -16,7 +16,7 @@
     	var theme = getTheme();
       var target = event.target;
       var tagName = target.tagName.toLowerCase();
-      if (tagName == 'img' && target.className == 'canvasxpress') {
+      if (tagName == 'img' && target.className == 'cx-data') {
         zoom.out();
         var boundsT = target.getBoundingClientRect();
         var boundsP = target.parentNode.getBoundingClientRect();        
@@ -24,8 +24,10 @@
         var div = document.createElement('div');
         div.id = 'cX-Container-' + target.id;
         div.style.position = "absolute"; 
-        div.style.width = "100%"; 
-        div.style.top = "-44px";
+        div.style.width = target.clientWidth + 'px';
+        div.style.height = target.clientHeight + 'px';
+        // CanvasXpress adds 44px if data is loaded remotely
+        div.style.top = "-44px"; 
         div.style.left = (boundsT.left - boundsP.left) + "px";
         div.style.margin = "0px";
         var canvas = document.createElement('canvas');
@@ -40,39 +42,36 @@
           callback : function () {
             setTimeout(function () {
               var close = document.createElement('img');
+              close.className = 'cx-data';
               close.src = "https://canvasxpress.org/images/deleteCross.png";
               close.canvasId = 'cX-' + target.id + '-1';
               close.imageId = target.id;
-              target.parentNode.appendChild(close);
-              var boundsC = close.getBoundingClientRect();
-              close.style.position = 'relative';
-              close.style.left = ((boundsC.left - boundsT.left) + 21 ) + 'px';
-              close.style.top = -((boundsC.top - boundsT.top) + 21 ) + 'px';
-              close.style.border = '0px none';
-              close.style.margin = '4px';
-              close.style.boxShadow = '0 0 0px rgba(0,0,0,0)';
-              close.style.background = 'rgba(0,0,0,0)';
+              var div = document.createElement('div');
+              div.className = 'cx-destroy';
+              div.style.left = (target.clientWidth + boundsT.left - boundsP.left) + "px";
+              div.appendChild(close);
+              parent.appendChild(div);
               close.addEventListener( 'click', Reveal.destroyCanvasXpressObject, false);
             }, 1000);
           }
         });
+      	target.className = 'cx-data cx-data-transparent';
       }
     });
-
 	}
 	
   Reveal.destroyCanvasXpressObject = function (event) {
-    var target = event.target;
-    var cid = target.canvasId;
-    var image = document.getElementById(target.imageId);
-    if (cid && image) {
-      CanvasXpress.destroy(cid);
-      target.removeEventListener('click', Reveal.destroyCanvasXpressObject, false);
-      var parent = target.parentNode;
-      while (parent.childNodes.length > 2) {
-        parent.removeChild(parent.lastChild); 
-      }
-      image.style.cssText = " ";
+    var c = event.target.canvasId;
+    var i = event.target.imageId;
+    var d = 'cX-Container-' + i;
+    if (c && i && d) {
+      var e = document.getElementById(i);
+      e.className = 'cx-data';
+      CanvasXpress.destroy(c);
+      event.target.removeEventListener('click', Reveal.destroyCanvasXpressObject, false);
+      var l = document.getElementById(d);
+      l.parentNode.removeChild(l);
+      event.target.parentNode.parentNode.removeChild(event.target.parentNode);
     }
   }    
 	

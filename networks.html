@@ -24,6 +24,50 @@
       document.getElementsByTagName( 'head' )[0].appendChild( link );
     </script>
     
+    <style>
+      div.cx-data img.cx-data-transparent {
+        margin: 0px; 
+        border: 0px;
+        background: rgba(0,0,0,0);
+        box-shadow: 0 0 10px rgba(0,0,0,0);
+        opacity: 0;
+      }
+      div.cx-data img.cx-data {
+        margin: 0px; 
+        border: 0px;
+        background: rgba(0,0,0,0);
+        box-shadow: 0 0 10px rgba(0,0,0,0);
+        -webkit-transition: opacity 1s ease-in-out;
+        -moz-transition: opacity 1s ease-in-out;
+        -o-transition: opacity 1s ease-in-out;
+        transition: opacity 1s ease-in-out;
+      }
+      div.cx-destroy img.cx-data {
+        margin: 0px; 
+        border: 0px;
+        background: rgba(0,0,0,0);
+        box-shadow: 0 0 10px rgba(0,0,0,0);
+      }
+      div.cx-data {
+        position: absolute;
+        width: 100%; 
+        top: 0px; 
+        left: 0px; 
+        margin: 0px;
+      }
+      div.cx-destroy {
+        position: absolute;
+        width: 16px;
+        height: 16px; 
+        top: -40px; 
+        left: 0px; 
+        margin: 0px;
+      }
+      div.cx-block {
+        position: relative; 
+      }
+    </style>
+
     <!-- CanvasXpress --> 
     <!-- Must be specified last to avoid conflicts with CSS -->       
     <link rel="stylesheet" href="./canvas/css/canvasXpress.css" type="text/css">
@@ -195,28 +239,38 @@ var cX = new CanvasXpress("canvasId",
           </pre>          
         </section>
         <section>
-           <h2>Some Examples</h2>
-           <div style="position:absolute; width:308px; height:308px; left:200px; top:10px;">
-             <img id="miserables" class="canvasxpress" width="300" height="300" src="https://canvasxpress.org/images/ex/Ex-network-1.png" alt="Click for Interactive">
-           </div>
-           <div style="position:absolute; width:308px; height:308px; left:700px; top:10px;">
-             <img id="karate" class="canvasxpress" width="300" height="300" src="https://canvasxpress.org/images/ex/Ex-network-4.png" alt="Click for Interactive">
-           </div>
-           <div style="position:absolute; width:308px; height:308px; left:200px; top:400px;">
-             <img id="kegg" class="canvasxpress" width="300" height="300" src="https://canvasxpress.org/images/ex/Ex-network-7.png" alt="Click for Interactive">
-           </div>
-           <div style="position:absolute; width:308; height:308px; left:700px; top:400px;">
-             <img id="metabase" class="canvasxpress" width="300" height="300" src="https://canvasxpress.org/images/ex/Ex-network-11.png" alt="Click for Interactive">
-           </div>
+          <h2>Some Examples</h2>
+          <div style="width:800px; height:800px; margin:auto;">
+            <div class="cx-block" style="width:350px; height:350px; margin:20px; float:left;">
+              <div class="cx-data">
+                <img class="cx-data" id="miserables" src="https://canvasxpress.org/images/ex/Ex-network-1.png" alt="Click for Interactive">
+              </div>
+            </div>
+            <div class="cx-block" style="width:350px; height:350px; margin:20px; float:left;">
+              <div class="cx-data">
+                <img class="cx-data" id="karate" src="https://canvasxpress.org/images/ex/Ex-network-4.png" alt="Click for Interactive">
+              </div>
+            </div>
+            <div class="cx-block" style="width:350px; height:350px; margin:20px; float:left;">
+              <div class="cx-data">
+                <img class="cx-data" id="kegg" src="https://canvasxpress.org/images/ex/Ex-network-7.png" alt="Click for Interactive">
+              </div>
+            </div>
+            <div class="cx-block" style="width:350px; height:350px; margin:20px; float:left;">
+              <div class="cx-data">
+                <img class="cx-data" id="metabase" src="https://canvasxpress.org/images/ex/Ex-network-11.png" alt="Click for Interactive">
+              </div>
+            </div>
+          </div>
         </section>        
         <section>
           <h2>Point of View</h2>
           <p>
             Press <strong>ESC</strong> to enter the slide overview.
           </p>
-          <div style="position:relative; width:100%; height:100%; margin:auto;">
-            <div style="position:absolute; width:100%; top:0px; left:0px; margin:0px;">
-              <img style="margin:0px; border:0px;" id="example" class="canvasxpress" src="https://canvasxpress.org/images/ex/Ex-dotplot-1.png" alt="Click for Interactive">
+          <div class="cx-block" style="width:100%; height:100%; margin:auto;">
+            <div class="cx-data">
+              <img class="cx-data" id="example" src="https://canvasxpress.org/images/ex/Ex-dotplot-1.png" alt="Click for Interactive">
             </div>
           </div>
         </section>
@@ -225,9 +279,9 @@ var cX = new CanvasXpress("canvasId",
           <p>
             Press <strong>ESC</strong> to enter the slide overview.
           </p>
-          <div style="position:relative; width:300px; height:300px; margin:0;">
-            <div style="position:absolute; width:100%; top:0px; left:0px; margin:0px;">
-              <img style="margin:0px; border:0px;" id="example" class="canvasxpress" src="https://canvasxpress.org/images/ex/Ex-dotplot-1.png" alt="Click for Interactive">
+          <div class="cx-block" style="width:300px; height:300px; margin:0;">
+            <div class="cx-data">
+              <img class="cx-data" id="example" src="https://canvasxpress.org/images/ex/Ex-dotplot-1.png" alt="Click for Interactive">
             </div>
           </div>
         </section>
