@@ -164,18 +164,20 @@
         </section>
         <section data-transition="fade">
           <h2>Features</h2>
-          <ul>
-            <li>Open source JavaScript library to visualize Genetic Networks</li>
-            <li>Used in a web environment or as an R package</li>
-            <li>Support for many standard data formats</li>
-            <li>Rich interface to dynamically overlay experimental data</li>
-            <li>Built for Reproducible Research in mind</li>
-          </ul>
+          <div style="width:60%; margin:auto; padding-top:50px;">
+          <p align="left" >Open source JavaScript library to visualize Genetic Networks</p>
+          <p align="left" class="fragment highlight-blue">Used in a web environment or as an R package</p>
+          <p align="left" class="fragment highlight-blue">Support for many standard data formats</p>
+          <p align="left" class="fragment highlight-blue">Rich interface to dynamically overlay experimental data</p>
+          <p align="left" class="fragment highlight-blue">Built for Reproducible Research in mind</p>
+          </div>
         </section>
         <section data-transition="fade">
           <h3>CanvasXpress within R-Studio</h3>
-          <img src="./images/cx-rs.png">
-          <p>Used at the console as well as in a Shiny context</p>
+          <div style="width:50%; margin:auto;">
+            <img src="./images/cx-rs.png">
+            <p>Used at the console as well as in a Shiny context</p>
+          </div>
         </section>
         <section>
           <h3>Supported Data Formats</h3>
@@ -292,7 +294,7 @@ var cX = new CanvasXpress("canvasId",
             </div>
           </div>
         </section>        
-        <section>
+        <section data-background-image="images/matrix-2354492.jpg">
           <h2>Point of View</h2>
           <p>
             Press <strong>ESC</strong> to enter the slide overview.
@@ -332,7 +334,7 @@ var cX = new CanvasXpress("canvasId",
         history: true,
         center: true,
 
-        transition: Reveal.getQueryHash().transition, //|| 'linear', // default/cube/page/concave/zoom/linear/fade/none,
+        transition: 'linear', // default/cube/page/concave/zoom/linear/fade/none,
 
         // Zooming config
         zoomKey: 'alt',
