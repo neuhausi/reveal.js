@@ -10,7 +10,7 @@
     <title>CanavasXpress Networks</title>
 
     <link rel="stylesheet" href="css/reveal.css">
-    <link rel="stylesheet" href="css/theme/serif.css">
+    <link rel="stylesheet" href="css/theme/sky.css">
 
     <!-- Theme used for syntax highlighting of code -->
     <link rel="stylesheet" href="lib/css/zenburn.css">
@@ -86,24 +86,23 @@
   
     <div class="reveal">
       <div class="slides">
-        <section data-transition="convex-in fade-out">
+        <section data-transition="convex-in fade-out" data-background-image="./images/vL5c6W.png">
           <h2>Visualizing Networks with CanvasXpress</h2>
           <p>
             More examples @ <a href="https://canvasxpress.org/html/network-1.html">canvasXpress.org</a>
           </p>
-          <p>
-            <a href="mailto:imnphd@gmail.com">Isaac Neuhaus</a> -- Bristol-Myers Squibb
-          </p>
+          <p>Translational Bioinformatics -- Bristol-Myers Squibb</p>
+          <p><a href="mailto:imnphd@gmail.com">Isaac Neuhaus</a></p>
         </section>
         <!-- Outline -->
         <section data-transition="convex-in fade-out">
           <h2>Features</h2>
-          <div style="width:60%; margin:auto; padding-top:50px;">
+          <div style="width:70%; margin:auto; padding-top:50px;">
             <p align="left"><a href="#/2">Open source JavaScript library to visualize Genetic Networks</a></p>
             <p align="left"><a href="#/4">Used in a web environment or as an R package</a></p>
             <p align="left"><a href="#/10">Support for many standard data formats</a></p>
             <p align="left"><a href="#/15">Rich interface to dynamically overlay experimental data</a></p>
-            <p align="left"><a href="#/19">Built for Reproducible Research in mind</a></p>
+            <p align="left"><a href="#/19">Built with Reproducible Research in mind</a></p>
           </div>
         </section>
         <!-- General -->
@@ -170,7 +169,7 @@ devtools::install_github('neuhausi/canvasXpress')
         </section>
         <!-- R Examples -->
         <section data-transition="convex-in fade-out">
-          <h3>More 'R' Examples and Resources</h3>
+          <h3>-- R Examples and Resources --</h3>
           <pre>
             <code class="hljs R" style="width:80%; margin:auto; line-height:25px; font-size:xx-large; max-height:800px;">
 #List all package vignettes
@@ -196,7 +195,7 @@ cxShinyExample(example = "example1")
         <section data-transition="convex-in fade-out">
           <h3>CanvasXpress in R</h3>
           <div style="width:80%; margin:auto;">
-            <img src="./images/r-help.png">
+            <img width="1000" src="./images/r-help.png">
           </div>
         </section>
         <!-- R-Studio -->        
@@ -385,7 +384,7 @@ renderCanvasXpress({
         <!-- Formats -->        
         <section data-transition="convex-in fade-out">
           <h3>Supported Data Formats</h3>
-          <ul>
+          <ul style="padding-top:50px;">
             <li>Native - JSON object</li>
             <li>GML - <a href="https://en.wikipedia.org/wiki/Graph_Modelling_Language">Graph Modelling Language</a></li>
             <li>XML
@@ -475,7 +474,7 @@ canvasXpress(
         <!-- XML Code -->
         <section data-transition="convex-in fade-out">
           <h3>XML is loaded from a URL</h3>
-          <p>In JS... - Parameters: (1) DOM id, (2) data, (3) config</p>
+          <p>In JS...</p>
           <pre>
             <code class="hljs javascript" style="width:60%; margin:auto; line-height:26px; font-size:xx-large; max-height:800px;">
 var cX = new CanvasXpress("canvasId",
@@ -601,15 +600,15 @@ canvasXpress(
               </div>
             </div>          
         </section>
-        <section data-transition="convex-in fade-out">
+        <section data-transition="convex-in fade-out" data-background-image="./images/vL5c6W.png">
           <h2>Acknowledgements</h2>
-          <div style="width:60%; margin:auto; padding-top:50px;">
+          <div style="width:80%; margin:auto; padding-top:50px;">
             <p align="left">Connie Brett - Maintainer of the R package - Aggregate Genius</p>
             <p align="left">Alex Ishkin - Code to export XML from Metabase - Clarivate</p>
             <p align="left">Ron Amar - Code to export all pathways from Metabase - BMS</p>
           </div>
         </section>
-        <section data-transition="convex-in fade-out">
+        <section data-transition="convex-in fade-out" data-background-image="./images/vL5c6W.png">
           <h1>Thank you!</h1>
         </section>
         <section data-transition="convex-in fade-out">
