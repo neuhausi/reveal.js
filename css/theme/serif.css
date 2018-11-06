@@ -224,9 +224,7 @@ body {
  * IMAGES
  *********************************************/
 .reveal section img {
-  margin: 15px 0px;
-  background: rgba(255, 255, 255, 0.12);
-  border: 4px solid #000; }
+}
 
 .reveal section img.plain {
   border: 0;
@@ -238,7 +236,7 @@ body {
   transition: all .15s linear; }
 
 .reveal a:hover img {
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0);
   border-color: #51483D; }
 
 /*********************************************
