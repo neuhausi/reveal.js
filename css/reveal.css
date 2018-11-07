@@ -545,7 +545,7 @@ body {
 .reveal.center,
 .reveal.center .slides,
 .reveal.center .slides section {
-  min-height: 0 !important; }
+  min-height: auto !important; }
 
 /* Don't allow interaction with invisible slides */
 .reveal .slides > section.future,

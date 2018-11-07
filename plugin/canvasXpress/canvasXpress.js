@@ -34,6 +34,8 @@
         canvas.id = 'cX-' + target.id;
         canvas.width = target.clientWidth;
         canvas.height = target.clientHeight;
+        canvas['data-responsive'] = true;
+        canvas['data-aspectRatio'] = parseInt(target.clientWidth) + ':' + parseInt(target.clientHeight);
         div.appendChild(canvas);
         parent.appendChild(div);
         var cx = new CanvasXpress({
