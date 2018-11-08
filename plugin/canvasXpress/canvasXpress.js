@@ -18,6 +18,7 @@
       var tagName = target.tagName.toLowerCase();
       if (tagName == 'img' && target.className == 'cx-data') {
         zoom.out();
+        var scale = 1 / Number(document.getElementsByClassName('slides')[0].style.zoom);
         var boundsT = target.getBoundingClientRect();
         var boundsP = target.parentNode.getBoundingClientRect();        
         var parent = target.parentNode.parentNode;
@@ -30,6 +31,7 @@
         div.style.top = "-44px"; 
         div.style.left = (boundsT.left - boundsP.left) + "px";
         div.style.margin = "0px";
+        div.style.transform = 'scale(' + scale + ')';
         var canvas = document.createElement('canvas');
         canvas.id = 'cX-' + target.id;
         canvas.width = target.clientWidth;
