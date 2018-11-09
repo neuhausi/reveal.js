@@ -33,7 +33,6 @@
         opacity: 0;
       }
       div.cx-data img.CanvasXpress {
-        margin: 0px; 
         border: 0px;
         background: rgba(0,0,0,0);
         box-shadow: 0 0 10px rgba(0,0,0,0);
@@ -43,7 +42,6 @@
         transition: opacity 1s ease-in-out;
       }
       div.cx-data img.cx-data {
-        margin: 0px; 
         border: 0px;
         background: rgba(0,0,0,0);
         box-shadow: 0 0 10px rgba(0,0,0,0);
@@ -52,15 +50,7 @@
         -o-transition: opacity 1s ease-in-out;
         transition: opacity 1s ease-in-out;
       }
-      div.cx-data:hover:after {
-        content: url(https://canvasxpress.org/images/icons2/cx/mouseLeft2.png);
-        display: block;
-        position: relative;
-        top: -100px;
-        left: 0px;
-      }
       div.cx-destroy img.CanvasXpress {
-        margin: 0px; 
         border: 0px;
         background: rgba(0,0,0,0);
         box-shadow: 0 0 10px rgba(0,0,0,0);
@@ -68,106 +58,33 @@
       div.cx-data {
         position: absolute;
         width: 100%; 
-        top: 0px; 
-        left: 0px; 
-        margin: 0px;
       }
       div.cx-destroy {
         position: absolute;
-        width: 16px;
-        height: 16px; 
-        top: -40px; 
-        left: 0px; 
-        margin: 0px;
       }
       div.cx-block {
         position: relative; 
+      }
+      .side-by-side {
+        display: -webkit-flex;
+        display: -moz-flex;
+        display: flex;
+        box-sizing: border-box;
+      }
+      .side-by-side .side + .side {
+         margin-left: 2rem;
+      }      
+      .side-by-side .side {
+        -webkit-flex: 1 0 0;
+        -moz-flex: 1 0 0;
+        flex: 1 0 0;
       }
     </style>
 
     <!-- CanvasXpress --> 
     <!-- Must be specified last to avoid conflicts with CSS --> 
-    <!--      
     <link rel="stylesheet" href="https://canvasxpress.org/css/canvasXpress.css" type="text/css">
     <script type="text/javascript" src="https://canvasxpress.org/js/canvasXpress.min.js"></script>
-    --> 
-    <link rel="stylesheet" href="../canvas/css/canvasXpress.css" type="text/css"/>
-    <script type="text/javascript" src="../canvas/js/sprintf.min.js"></script>
-    <script type="text/javascript" src="../canvas/js/date.format.min.js"></script>
-    <script type="text/javascript" src="../canvas/js/conrec.min.js"></script>
-    <script type="text/javascript" src="../canvas/js/jLouvain.min.js"></script>
-    <script type="text/javascript" src="../canvas/js/FileSaverBlob.min.js"></script>
-    <script type="text/javascript" src="../canvas/js/numeric.cX.min.js"></script>
-    <script type="text/javascript" src="../canvas/js/canvas2svg.js"></script>
-    <script type="text/javascript" src="../canvas/js/genie.js"></script>
-    <script type="text/javascript" src="../canvas/js/dom-to-image.js"></script>
-    <script type="text/javascript" src="../canvas/js/build/canvasXpress.init.js"></script>
-    <script type="text/javascript" src="../canvas/js/build/canvasXpress.globals.js"></script>
-    <script type="text/javascript" src="../canvas/js/build/canvasXpress.dom.js"></script>
-    <script type="text/javascript" src="../canvas/js/build/canvasXpress.interface.js"></script>
-    <script type="text/javascript" src="../canvas/js/build/canvasXpress.config.js"></script>
-    <script type="text/javascript" src="../canvas/js/build/canvasXpress.text.js"></script>
-    <script type="text/javascript" src="../canvas/js/build/canvasXpress.time.js"></script>
-    <script type="text/javascript" src="../canvas/js/build/canvasXpress.color.js"></script>
-    <script type="text/javascript" src="../canvas/js/build/canvasXpress.attributes.js"></script>
-    <script type="text/javascript" src="../canvas/js/build/canvasXpress.algorithm.js"></script>
-    <script type="text/javascript" src="../canvas/js/build/canvasXpress.primitives.js"></script>
-    <script type="text/javascript" src="../canvas/js/build/canvasXpress.utilsGeneral.js"></script>
-    <script type="text/javascript" src="../canvas/js/build/canvasXpress.utilsPlot.js"></script>
-    <script type="text/javascript" src="../canvas/js/build/canvasXpress.utilsConfig.js"></script>
-    <script type="text/javascript" src="../canvas/js/build/canvasXpress.utils3d.js"></script>
-    <script type="text/javascript" src="../canvas/js/build/canvasXpress.utilsApi.js"></script>
-    <script type="text/javascript" src="../canvas/js/build/canvasXpress.utilsDimension.js"></script>
-    <script type="text/javascript" src="../canvas/js/build/canvasXpress.utils.js"></script>
-    <script type="text/javascript" src="../canvas/js/build/canvasXpress.legend.js"></script>
-    <script type="text/javascript" src="../canvas/js/build/canvasXpress.filter.js"></script>
-    <script type="text/javascript" src="../canvas/js/build/canvasXpress.cluster.js"></script>
-    <script type="text/javascript" src="../canvas/js/build/canvasXpress.sort.js"></script>
-    <script type="text/javascript" src="../canvas/js/build/canvasXpress.math.js"></script>
-    <script type="text/javascript" src="../canvas/js/build/canvasXpress.layout.js"></script>
-    <script type="text/javascript" src="../canvas/js/build/canvasXpress.viewport.js"></script>
-    <script type="text/javascript" src="../canvas/js/build/canvasXpress.menu.js"></script>
-    <script type="text/javascript" src="../canvas/js/build/canvasXpress.links.js"></script>
-    <script type="text/javascript" src="../canvas/js/build/canvasXpress.tooltip.js"></script>
-    <script type="text/javascript" src="../canvas/js/build/canvasXpress.toolbar.js"></script>
-    <script type="text/javascript" src="../canvas/js/build/canvasXpress.configurator.js"></script>
-    <script type="text/javascript" src="../canvas/js/build/canvasXpress.acknowlegments.js"></script>
-    <script type="text/javascript" src="../canvas/js/build/canvasXpress.code.js"></script>
-    <script type="text/javascript" src="../canvas/js/build/canvasXpress.bin.js"></script>
-    <script type="text/javascript" src="../canvas/js/build/canvasXpress.dataexplorer.js"></script>
-    <script type="text/javascript" src="../canvas/js/build/canvasXpress.datafilter.js"></script>
-    <script type="text/javascript" src="../canvas/js/build/canvasXpress.datatable.js"></script>
-    <script type="text/javascript" src="../canvas/js/build/canvasXpress.resizer.js"></script>
-    <script type="text/javascript" src="../canvas/js/build/canvasXpress.resizerAxis.js"></script>
-    <script type="text/javascript" src="../canvas/js/build/canvasXpress.motion.js"></script>
-    <script type="text/javascript" src="../canvas/js/build/canvasXpress.drag.js"></script>
-    <script type="text/javascript" src="../canvas/js/build/canvasXpress.key.js"></script>
-    <script type="text/javascript" src="../canvas/js/build/canvasXpress.select.js"></script>
-    <script type="text/javascript" src="../canvas/js/build/canvasXpress.dendrogram.js"></script>
-    <script type="text/javascript" src="../canvas/js/build/canvasXpress.canvas.js"></script>
-    <script type="text/javascript" src="../canvas/js/build/canvasXpress.cleanup.js"></script>
-    <script type="text/javascript" src="../canvas/js/build/canvasXpress.events.js"></script>
-    <script type="text/javascript" src="../canvas/js/build/canvasXpress.animation.js"></script>
-    <script type="text/javascript" src="../canvas/js/build/canvasXpress.example.js"></script>
-    <script type="text/javascript" src="../canvas/js/build/canvasXpress.data.js"></script>
-    <script type="text/javascript" src="../canvas/js/build/canvasXpress.dataUtils.js"></script>
-    <script type="text/javascript" src="../canvas/js/build/canvasXpress.random.js"></script>
-    <script type="text/javascript" src="../canvas/js/build/canvasXpress.fx.js"></script>
-    <script type="text/javascript" src="../canvas/js/build/canvasXpress.remote.js"></script>
-    <script type="text/javascript" src="../canvas/js/build/canvasXpress.graph.js"></script>
-    <script type="text/javascript" src="../canvas/js/build/canvasXpress.axis.js"></script>
-    <script type="text/javascript" src="../canvas/js/build/canvasXpress.pie.js"></script>
-    <script type="text/javascript" src="../canvas/js/build/canvasXpress.venn.js"></script>
-    <script type="text/javascript" src="../canvas/js/build/canvasXpress.correlation.js"></script>
-    <script type="text/javascript" src="../canvas/js/build/canvasXpress.scatter2d.js"></script>
-    <script type="text/javascript" src="../canvas/js/build/canvasXpress.scatter3d.js"></script>
-    <script type="text/javascript" src="../canvas/js/build/canvasXpress.onedplot.js"></script>
-    <script type="text/javascript" src="../canvas/js/build/canvasXpress.network.js"></script>
-    <script type="text/javascript" src="../canvas/js/build/canvasXpress.genome.js"></script>
-    <script type="text/javascript" src="../canvas/js/build/canvasXpress.circular.js"></script>
-    <script type="text/javascript" src="../canvas/js/build/canvasXpress.video.js"></script>
-    <script type="text/javascript" src="../canvas/js/build/canvasXpress.images.js"></script>
-    <script type="text/javascript" src="../canvas/js/build/canvasXpress.doc.js"></script>
 
   </head>
   
@@ -180,54 +97,61 @@
           <p>
             More examples @ <a href="https://canvasxpress.org/html/network-1.html">canvasXpress.org</a>
           </p>
-          <p>Translational Bioinformatics -- Bristol-Myers Squibb</p>
           <p><a href="mailto:imnphd@gmail.com">Isaac Neuhaus</a></p>
         </section>
         <!-- Outline -->
         <section data-transition="convex-in fade-out">
           <h2>Features</h2>
-          <div style="width:70%; margin:auto; padding-top:50px;">
-            <p align="left"><a href="#/2">Open source JavaScript library to visualize Genetic Networks</a></p>
-            <p align="left"><a href="#/4">Used in a web environment or as an R package</a></p>
-            <p align="left"><a href="#/10">Support for many standard data formats</a></p>
-            <p align="left"><a href="#/15">Rich interface to dynamically overlay experimental data</a></p>
-            <p align="left"><a href="#/19">Built with Reproducible Research in mind</a></p>
-          </div>
+          <p align="left"><a href="#/2">Open source JavaScript library</a></p>
+          <p align="left"><a href="#/4">Used in a web environment or as an R package</a></p>
+          <p align="left"><a href="#/10">Support for many standard data formats</a></p>
+          <p align="left"><a href="#/15">Rich interface to overlay experimental data</a></p>
+          <p align="left"><a href="#/19">Built with Reproducible Research in mind</a></p>
         </section>
         <!-- General -->
         <section data-transition="convex-in fade-out">
           <h2>Network Layouts</h2>
-          <div style="width:800px; height:800px; margin:auto;">
-            <div class="cx-block" style="width:320px; margin:0px; float:left;">
-              <span style="font-size: large;">Force Directed</span>
+          <div class="side-by-side" style="padding-top:5px; font-size:x-large;">
+            <div class="side">
+              Force Directed
             </div>
-            <div class="cx-block" style="width:320px; margin:0px; float:left;">
-              <span style="font-size: large;">Organic</span>
+            <div class="side">
+              Organic
             </div>
-            <div class="cx-block" style="width:320px; height:320px; margin:10px; float:left;">
-              <div class="cx-data">
-                <img class="CanvasXpress" id="forcedirected" src="./images/forcedirected.png">
+            <div class="side">
+              Circular
+            </div>
+            <div class="side">
+              Radial
+            </div>
+          </div>
+          <div class="side-by-side">
+            <div class="side">
+              <div class="cx-block">
+                <div class="cx-data">
+                  <img class="CanvasXpress" id="forcedirected" src="./images/forcedirected.png">
+                </div>
               </div>
             </div>
-            <div class="cx-block" style="width:320px; height:320px; margin:10px; float:left;">
-              <div class="cx-data">
-                <img class="CanvasXpress" id="organic" src="./images/organic.png">
+            <div class="side">
+              <div class="cx-block">
+                <div class="cx-data">
+                  <img class="CanvasXpress" id="organic" src="./images/organic.png">
+                </div>
               </div>
             </div>
-            <div class="cx-block" style="width:320px; margin:0px; float:left;">
-              <span style="font-size: large;">Circular</span>
-            </div>
-            <div class="cx-block" style="width:320px; margin:0px; float:left;">
-              <span style="font-size: large;">Radial</span>
-            </div>
-            <div class="cx-block" style="width:320px; height:320px; margin:10px; float:left;">
-              <div class="cx-data">
-                <img class="CanvasXpress" id="circular" src="./images/circular.png">
+            <div class="side">
+              <div class="cx-block">
+                <div class="cx-data">
+                  <img class="CanvasXpress" id="circular" src="./images/circular.png">
+                </div>
               </div>
             </div>
-            <div class="cx-block" style="width:320px; height:320px; margin:10px; float:left;">
-              <div class="cx-data">
-                <img class="CanvasXpress" id="radial" src="./images/radial.png">
+            <div class="side">
+              <div class="cx-block">
+                <div class="cx-data">
+                  <img class="CanvasXpress" id="radial" src="./images/radial.png">
+                </div>
               </div>
             </div>
           </div>
@@ -250,7 +174,7 @@
             <h3>Installation</h3>
             <p align="left" style="font-size:x-large;">canvasXpress is available for installation from <a href="https://cran.r-project.org/web/packages/canvasXpress/index.html">CRAN</a> or you can install the latest version of canvasXpress from GitHub as follows:</p>
             <pre>
-              <code class="hljs R" style="width:100%; margin:auto; line-height:25px; font-size:xx-large; max-height:800px;">
+              <code class="hljs R" style="line-height:20px; font-size:large; max-height:800px;">
 devtools::install_github('neuhausi/canvasXpress')              
               </code>
             </pre>
@@ -260,7 +184,7 @@ devtools::install_github('neuhausi/canvasXpress')
         <section data-transition="convex-in fade-out">
           <h3>-- R Examples and Resources --</h3>
           <pre>
-            <code class="hljs R" style="width:80%; margin:auto; line-height:25px; font-size:xx-large; max-height:800px;">
+            <code class="hljs R" style="line-height:20px; font-size:large; max-height:800px;">
 #List all package vignettes
 vignette(package = "canvasXpress")
 
@@ -271,7 +195,7 @@ vignette("additional_examples", package = "canvasXpress")
           </pre>
           <h3>- Shiny -</h3>
           <pre>
-            <code class="hljs R" style="width:80%; margin:auto; line-height:25px; font-size:xx-large; max-height:800px;">
+            <code class="hljs R" style="line-height:20px; font-size:large; max-height:800px;">
 #List example names
 cxShinyExample()
 
@@ -305,7 +229,7 @@ cxShinyExample(example = "example1")
           <section data-transition="convex-in fade-out">
             <h3>Some Shiny Code</h3>
             <pre>
-              <code class="hljs R" style="width:90%; margin:auto; line-height:18px; font-size:x-large; max-height:800px;">
+              <code class="hljs R" style="line-height:12px; font-size:medium; max-height:800px;">
 library(shiny)
 library(htmlwidgets)
 library(canvasXpress)
@@ -327,7 +251,7 @@ shinyServer(function(input, output, session) {
               </code>
             </pre>
             <pre>
-              <code class="hljs R" style="width:90%; margin:auto; line-height:18px; font-size:x-large; max-height:800px;">
+              <code class="hljs R" style="line-height:12px; font-size:medium; max-height:800px;">
 library(shiny)
 library(htmlwidgets)
 library(canvasXpress)
@@ -357,7 +281,7 @@ shinyUI(pageWithSidebar(
           <section data-transition="convex-in fade-out">
             <p>Some Markup Code</p>
             <pre>
-              <code class="hljs" style="width:60%; margin:auto; line-height:14px; font-size:medium; max-height:800px;">
+              <code class="hljs" style="line-height:10px; font-size:x-small; max-height:800px;">
 ---
 title: "IPF Fibroblast data"
 output:
@@ -416,7 +340,7 @@ ds1 = reactive({
           <section data-transition="convex-in fade-out">
             <p>the rest of the Markup Code</p>
             <pre>
-              <code class="hljs" style="width:60%; margin:auto; line-height:14px; font-size:medium; max-height:800px;">
+              <code class="hljs" style="line-height:10px; font-size:x-small; max-height:800px;">
 Dashboard
 ======================================================================
 
@@ -494,7 +418,7 @@ renderCanvasXpress({
         <section data-transition="convex-in fade-out">
           <h3>Native JSON Format</h3>
           <pre>
-            <code class="hljs javascript" style="width:40%; margin:auto; line-height:16px; font-size:x-large; max-height:800px;">
+            <code class="hljs javascript" style="line-height:10px; font-size:x-small; max-height:800px;">
 var cX = new CanvasXpress("canvasId", {
       nodes: [
         {
@@ -541,7 +465,7 @@ var cX = new CanvasXpress("canvasId", {
         <section data-transition="convex-in fade-out">
           <h3>Native JSON Format turns into a dataframe in R</h3>
           <pre>
-            <code class="hljs R" style="width:90%; margin:auto; line-height:24px; font-size:x-large; max-height:800px;">
+            <code class="hljs R" style="line-height:20px; font-size:small; max-height:800px;">
 library(canvasXpress)
 nodes = "http://www.canvasxpress.org/data/cX-lesmiserable-nodes.txt"
 edges = "http://www.canvasxpress.org/data/cX-lesmiserable-edges.txt"
@@ -565,7 +489,7 @@ canvasXpress(
           <h3>XML is loaded from a URL</h3>
           <p>In JS...</p>
           <pre>
-            <code class="hljs javascript" style="width:60%; margin:auto; line-height:26px; font-size:xx-large; max-height:800px;">
+            <code class="hljs javascript" style="width:50%; margin:auto; line-height:16px; font-size:large; max-height:800px;">
 var cX = new CanvasXpress("canvasId",
     "https://path/to/file/hsa05222.xml", {
       graphType: "Network"
@@ -575,7 +499,7 @@ var cX = new CanvasXpress("canvasId",
           </pre>          
           <p>In R...</p>                    
           <pre>
-            <code class="hljs R" style="width:60%; margin:auto; line-height:26px; font-size:xx-large; max-height:800px;">
+            <code class="hljs R" style="width:50%; margin:auto; line-height:16px; font-size:large; max-height:800px;">
 library(canvasXpress)
 canvasXpress(
   data = "http://path/to/file/hsa05222.xml",
@@ -584,40 +508,50 @@ canvasXpress(
             </code>
           </pre>          
         </section>
-        <!-- Examples -->
+        <!-- Network Examples -->
         <section data-transition="convex-in fade-out">
           <h3>Some Examples</h3>
-          <div style="width:800px; height:800px; margin:auto;">
-            <div class="cx-block" style="width:320px; margin:0px; float:left;">
-              <span style="font-size: large;">Native Format</span>
+          <div class="side-by-side" style="padding-top:5px; font-size:x-large;">
+            <div class="side">
+              Native Format
             </div>
-            <div class="cx-block" style="width:320px; margin:0px; float:left;">
-              <span style="font-size: large;">Wikipathways</span>
+            <div class="side">
+              Wikipathways
             </div>
-            <div class="cx-block" style="width:320px; height:320px; margin:10px; float:left;">
-              <div class="cx-data">
-                <img class="CanvasXpress" id="miserables" src="./images/miserables.png">
+            <div class="side">
+              Kegg
+            </div>
+            <div class="side">
+              Metabase
+            </div>
+          </div>
+          <div class="side-by-side">
+            <div class="side">
+              <div class="cx-block">
+                <div class="cx-data">
+                  <img class="CanvasXpress" id="miserables" src="./images/miserables.png">
+                </div>
               </div>
             </div>
-            <div class="cx-block" style="width:320px; height:320px; margin:10px; float:left;">
-              <div class="cx-data">
-                <img class="CanvasXpress" id="wikipathways" src="./images/wikipathways.png">
+            <div class="side">
+              <div class="cx-block">
+                <div class="cx-data">
+                  <img class="CanvasXpress" id="wikipathways" src="./images/wikipathways.png">
+                </div>
               </div>
             </div>
-            <div class="cx-block" style="width:320px; margin:0px; float:left;">
-              <span style="font-size: large;">Kegg</span>
-            </div>
-            <div class="cx-block" style="width:320px; margin:0px; float:left;">
-              <span style="font-size: large;">Metabase</span>
-            </div>
-            <div class="cx-block" style="width:320px; height:320px; margin:10px; float:left;">
-              <div class="cx-data">
-                <img class="CanvasXpress" id="kegg" src="./images/kegg.png">
+            <div class="side">
+              <div class="cx-block">
+                <div class="cx-data">
+                  <img class="CanvasXpress" id="kegg" src="./images/kegg.png">
+                </div>
               </div>
             </div>
-            <div class="cx-block" style="width:320px; height:320px; margin:10px; float:left;">
-              <div class="cx-data">
-                <img class="CanvasXpress" id="metabase" src="./images/metabase.png">
+            <div class="side">
+              <div class="cx-block">
+                <div class="cx-data">
+                  <img class="CanvasXpress" id="metabase" src="./images/metabase.png">
+                </div>
               </div>
             </div>
           </div>
@@ -625,33 +559,43 @@ canvasXpress(
         <!-- Loading Experimental Data -->
         <section data-transition="convex-in fade-out">
           <h3>Loading Experimental Data</h3>
-          <div style="width:1300px; height:800px; margin:auto;">
-            <div class="cx-block" style="width:613px; height:613px; margin:0px; float:left;">
-              <div class="cx-data">
-                <img class="CanvasXpress" id="keggNoEx" src="./images/keggNoEx.png">
+          <div class="side-by-side" style="padding-top:5px; font-size:x-large;">
+            <div class="side">
+              No Data
+            </div>
+            <div class="side">
+              Experimental Data
+            </div>
+          </div>
+          <div class="side-by-side">
+            <div class="side">
+              <div class="cx-block">
+                <div class="cx-data">
+                  <img class="CanvasXpress" id="keggNoEx" src="./images/keggNoEx.png">
+                </div>
               </div>
             </div>
-            <div class="cx-block" style="width:613px; height:613px; margin:0px; float:left;">
-              <div class="cx-data">
-                <img class="CanvasXpress" id="keggEx" src="./images/keggEx.png">
+            <div class="side">
+              <div class="cx-block">
+                <div class="cx-data">
+                  <img class="CanvasXpress" id="keggEx" src="./images/keggEx.png">
+                </div>
               </div>
             </div>
-            <p>How to go convert these two images?</p>  
           </div>
         </section>
+        <!-- Mapping Experimental Data -->
         <section data-transition="convex-in fade-out">
-          <h3>The most difficult part is Bioinformatics!</h3>
-          <div style="width:60%; margin:auto; padding-top:50px;">
-            <p align="left">Find the ids for all the nodes in the network</p>
-            <p align="left">Associate those ids with the experimental data</p>
-            <p align="left">Write a <a href="https://canvasxpress.org/debug/hsa05222.txt">tab-delimited text file</a> with the info</p>
-          </div>
+          <h2>The most difficult part is Bioinformatics!</h2>
+          <p align="left">Find the ids for all the nodes in the network</p>
+          <p align="left">Associate those ids with the experimental data</p>
+          <p align="left">Write a <a href="https://canvasxpress.org/debug/hsa05222.txt">tab-delimited text file</a> with the info</p>
         </section>
         <section data-transition="convex-in fade-out">
           <h3>Loading Experimental Data</h3>
           <p>In JS...</p>
           <pre>
-            <code class="hljs javascript" style="width:90%; margin:auto; line-height:26px; font-size:xx-large; max-height:800px;">
+            <code class="hljs javascript" style="width:90%; margin:auto; line-height:16px; font-size:large; max-height:800px;">
 var cX = new CanvasXpress("canvasId",
     "https://path/to/file/hsa05222.xml", {      
       graphType: "Network",
@@ -663,7 +607,7 @@ var cX = new CanvasXpress("canvasId",
           </pre>
           <p>In R...</p>                    
           <pre>
-            <code class="hljs R" style="width:90%; margin:auto; line-height:26px; font-size:xx-large; max-height:800px;">
+            <code class="hljs R" style="width:90%; margin:auto; line-height:16px; font-size:large; max-height:800px;">
 library(canvasXpress)
 canvasXpress(
   data = "http://path/to/file/hsa05222.xml",
@@ -673,6 +617,7 @@ canvasXpress(
             </code>
           </pre>                                
         </section>
+        <!-- Showing Experimental Data -->
         <section data-transition="convex-in fade-out">
           <h3>Showing Experimental Data</h3>
             <div class="cx-block">
@@ -681,21 +626,21 @@ canvasXpress(
               </div>
             </div>          
         </section>
+        <!-- Reproducible Research -->
         <section data-transition="convex-in fade-out">
           <h3>What about Reproducible Research?</h3>
             <div class="cx-block">
               <div class="cx-data">
-                <img class="CanvasXpress" id="wikipathwayRR" src="./images/wikipathwaysRR.png">
+                <img class="CanvasXpress" id="wikipathwayRR2" src="./images/wikipathwaysRR.png">
               </div>
             </div>          
         </section>
+        <!-- Acknowledgements -->
         <section data-transition="convex-in fade-out" data-background-image="./images/vL5c6W.png">
           <h2>Acknowledgements</h2>
-          <div style="width:80%; margin:auto; padding-top:50px;">
-            <p align="left">Connie Brett - Maintainer of the R package - Aggregate Genius</p>
-            <p align="left">Alex Ishkin - Code to export XML from Metabase - Clarivate</p>
-            <p align="left">Ron Amar - Code to export all pathways from Metabase - BMS</p>
-          </div>
+          <p align="left">Connie Brett - Maintainer of the R package<br>Aggregate Genius</p>
+          <p align="left">Alex Ishkin - Export XML from Metabase<br>Clarivate</p>
+          <p align="left">Ron Amar - Export all pathways from Metabase<br>BMS</p>
         </section>
         <section data-transition="convex-in fade-out" data-background-image="./images/vL5c6W.png">
           <h1>Thank you!</h1>

@@ -26,39 +26,45 @@ var RevealCanvasXpress = window.RevealCanvasXpress || (function() {
 		var destroyCX = function(event) {
 			var c = event.target.canvasId;
 			var i = event.target.imageId;
-			var d = 'cX-Container-' + i;
-			if (c && i && d) {
+			if (c && i) {
 				var e = document.getElementById(i);
 				e.className = 'CanvasXpress';
 				CanvasXpress.destroy(c);
+				var d = event.target.parentNode.parentNode.querySelectorAll("div.cX-container")[0];
+				event.target.parentNode.parentNode.removeChild(d);
 				event.target.removeEventListener('click', destroyCX, false);
-				var l = document.getElementById(d);
-				l.parentNode.removeChild(l);
 				event.target.parentNode.parentNode.removeChild(event.target.parentNode);
 			}
+		}
+		var getCXId = function(id) {
+		  var chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+			if (!id) {
+				id = 'cX-000000';
+			}
+			if (CanvasXpress.instances.length) {
+				while (CanvasXpress.getObject(id)) {
+					id = 'cX-';
+				  for (var i = 0; i < 6; i++) {
+				    id += chars.charAt(Math.floor(Math.random() * chars.length));
+				  }
+				}
+			}
+			return id;
+		}
+		if (!target.id) {
+			target.id = 'foobar';
 		}
 		if (tagName == 'img' && target.className == 'CanvasXpress') {
 			zoom.out();
 			var scale = 1 / Reveal.getScale();
-			var boundsT = target.getBoundingClientRect();
-			var boundsP = target.parentNode.getBoundingClientRect();
 			var parent = target.parentNode.parentNode;
-			var diff = (target.parentNode.parentNode.clientWidth - (target.parentNode.parentNode.clientWidth * scale)) / 2;
-			// CanvasXpress adds 44px to the top if data is loaded remotely
-			var top = (-44 * scale);
-			var left = ((boundsT.left - boundsP.left) * scale) - diff;
-			//var left = (boundsT.left - boundsP.left) * scale;
 			var div = document.createElement('div');
-			div.id = 'cX-Container-' + target.id;
-			div.style.position = "absolute";
-			div.style.width = target.clientWidth + 'px';
-			div.style.height = target.clientHeight + 'px';
-			div.style.top = top + "px";
-			div.style.left = left + "px";
-			div.style.margin = "0px";
-			div.style.transform = 'scale(' + scale + ')';
+			var id = getCXId('cX-' + target.id);
+			// CanvasXpress adds 44px to the top if data is loaded remotely
+			div.style.transform = 'translateY(-44px) scale(' + scale + ')';
+			div.className = 'cX-container';
 			var canvas = document.createElement('canvas');
-			canvas.id = 'cX-' + target.id;
+			canvas.id = id;
 			canvas.width = target.clientWidth;
 			canvas.height = target.clientHeight;
 			canvas['data-responsive'] = true;
@@ -66,27 +72,29 @@ var RevealCanvasXpress = window.RevealCanvasXpress || (function() {
 			div.appendChild(canvas);
 			parent.appendChild(div);
 			var cx = new CanvasXpress({
-				renderTo : 'cX-' + target.id,
+				renderTo : id,
 				data : target.src,
 				callback : function() {
 					setTimeout(function() {
+						var bb = target.getClientRects();
 						var close = document.createElement('img');
 						close.className = 'cx-data';
 						close.src = "https://canvasxpress.org/images/deleteCross.png";
-						close.canvasId = 'cX-' + target.id + '-1';
+						close.canvasId = id + '-1';
 						close.imageId = target.id;
 						var div = document.createElement('div');
 						div.className = 'cx-destroy';
-						div.style.left = (target.clientWidth + left - diff) + "px";
-						//div.style.top = (-top - diff) + "px";
-						div.style.top = "0px";
+						div.style.width = '100%';
+						div.style.height = '16px';
+						div.style.top = '0px';
+						div.style.position = 'absolute';
 						div.appendChild(close);
 						parent.appendChild(div);
 						close.addEventListener('click', destroyCX, false);
 					}, 1000);
 				}
 			});
-			//target.className = 'cx-data CanvasXpress-transparent';
+			target.className = 'cx-data CanvasXpress-transparent';
 		}
 	});
 
