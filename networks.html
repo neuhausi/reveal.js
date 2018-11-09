@@ -25,12 +25,22 @@
     </script>
     
     <style>
-      div.cx-data img.cx-data-transparent {
+      div.cx-data img.CanvasXpress-transparent {
         margin: 0px; 
         border: 0px;
         background: rgba(0,0,0,0);
         box-shadow: 0 0 10px rgba(0,0,0,0);
         opacity: 0;
+      }
+      div.cx-data img.CanvasXpress {
+        margin: 0px; 
+        border: 0px;
+        background: rgba(0,0,0,0);
+        box-shadow: 0 0 10px rgba(0,0,0,0);
+        -webkit-transition: opacity 1s ease-in-out;
+        -moz-transition: opacity 1s ease-in-out;
+        -o-transition: opacity 1s ease-in-out;
+        transition: opacity 1s ease-in-out;
       }
       div.cx-data img.cx-data {
         margin: 0px; 
@@ -49,7 +59,7 @@
         top: -100px;
         left: 0px;
       }
-      div.cx-destroy img.cx-data {
+      div.cx-destroy img.CanvasXpress {
         margin: 0px; 
         border: 0px;
         background: rgba(0,0,0,0);
@@ -196,12 +206,12 @@
             </div>
             <div class="cx-block" style="width:320px; height:320px; margin:10px; float:left;">
               <div class="cx-data">
-                <img class="cx-data" id="forcedirected" src="./images/forcedirected.png">
+                <img class="CanvasXpress" id="forcedirected" src="./images/forcedirected.png">
               </div>
             </div>
             <div class="cx-block" style="width:320px; height:320px; margin:10px; float:left;">
               <div class="cx-data">
-                <img class="cx-data" id="organic" src="./images/organic.png">
+                <img class="CanvasXpress" id="organic" src="./images/organic.png">
               </div>
             </div>
             <div class="cx-block" style="width:320px; margin:0px; float:left;">
@@ -212,12 +222,12 @@
             </div>
             <div class="cx-block" style="width:320px; height:320px; margin:10px; float:left;">
               <div class="cx-data">
-                <img class="cx-data" id="circular" src="./images/circular.png">
+                <img class="CanvasXpress" id="circular" src="./images/circular.png">
               </div>
             </div>
             <div class="cx-block" style="width:320px; height:320px; margin:10px; float:left;">
               <div class="cx-data">
-                <img class="cx-data" id="radial" src="./images/radial.png">
+                <img class="CanvasXpress" id="radial" src="./images/radial.png">
               </div>
             </div>
           </div>
@@ -226,9 +236,9 @@
         <section data-transition="convex-in fade-out">
           <h2>Network Communities</h2>
           <p><a href="https://en.wikipedia.org/wiki/Louvain_Modularity">Louvain Method for community detection</a></p>
-          <div class="cx-block" style="width:100%; height:100%; margin:auto;">
+          <div class="cx-block">
             <div class="cx-data">
-              <img style="zoom:1;" class="cx-data" id="communities" src="./images/communities.png">
+              <img class="CanvasXpress" id="communities" src="./images/communities.png">
             </div>
           </div>
         </section>
@@ -586,12 +596,12 @@ canvasXpress(
             </div>
             <div class="cx-block" style="width:320px; height:320px; margin:10px; float:left;">
               <div class="cx-data">
-                <img class="cx-data" id="miserables" src="./images/miserables.png">
+                <img class="CanvasXpress" id="miserables" src="./images/miserables.png">
               </div>
             </div>
             <div class="cx-block" style="width:320px; height:320px; margin:10px; float:left;">
               <div class="cx-data">
-                <img class="cx-data" id="wikipathways" src="./images/wikipathways.png">
+                <img class="CanvasXpress" id="wikipathways" src="./images/wikipathways.png">
               </div>
             </div>
             <div class="cx-block" style="width:320px; margin:0px; float:left;">
@@ -602,12 +612,12 @@ canvasXpress(
             </div>
             <div class="cx-block" style="width:320px; height:320px; margin:10px; float:left;">
               <div class="cx-data">
-                <img class="cx-data" id="kegg" src="./images/kegg.png">
+                <img class="CanvasXpress" id="kegg" src="./images/kegg.png">
               </div>
             </div>
             <div class="cx-block" style="width:320px; height:320px; margin:10px; float:left;">
               <div class="cx-data">
-                <img class="cx-data" id="metabase" src="./images/metabase.png">
+                <img class="CanvasXpress" id="metabase" src="./images/metabase.png">
               </div>
             </div>
           </div>
@@ -618,12 +628,12 @@ canvasXpress(
           <div style="width:1300px; height:800px; margin:auto;">
             <div class="cx-block" style="width:613px; height:613px; margin:0px; float:left;">
               <div class="cx-data">
-                <img class="cx-data" id="keggNoEx" src="./images/keggNoEx.png">
+                <img class="CanvasXpress" id="keggNoEx" src="./images/keggNoEx.png">
               </div>
             </div>
             <div class="cx-block" style="width:613px; height:613px; margin:0px; float:left;">
               <div class="cx-data">
-                <img class="cx-data" id="keggEx" src="./images/keggEx.png">
+                <img class="CanvasXpress" id="keggEx" src="./images/keggEx.png">
               </div>
             </div>
             <p>How to go convert these two images?</p>  
@@ -665,17 +675,17 @@ canvasXpress(
         </section>
         <section data-transition="convex-in fade-out">
           <h3>Showing Experimental Data</h3>
-            <div class="cx-block" style="width:700px; height:700px; margin:auto;">
+            <div class="cx-block">
               <div class="cx-data">
-                <img class="cx-data" id="wikipathwayRR" src="./images/wikipathwaysRR.png">
+                <img class="CanvasXpress" id="wikipathwayRR" src="./images/wikipathwaysRR.png">
               </div>
             </div>          
         </section>
         <section data-transition="convex-in fade-out">
           <h3>What about Reproducible Research?</h3>
-            <div class="cx-block" style="width:700px; height:700px; margin:auto;">
+            <div class="cx-block">
               <div class="cx-data">
-                <img class="cx-data" id="wikipathwayRR" src="./images/wikipathwaysRR.png">
+                <img class="CanvasXpress" id="wikipathwayRR" src="./images/wikipathwaysRR.png">
               </div>
             </div>          
         </section>
@@ -718,12 +728,6 @@ canvasXpress(
         zoomKey: 'alt',
         zoomLevel: 3,
         
-        // Set for CanvasXpress to work properly
-        //width: "100%",
-        //height: "100%",
-        //minScale: 1,
-        //maxScale: 1,
-
         // Keyboard
         keyboard: {
           27 : null // Needed by canvasXpres to reset the graph
@@ -737,7 +741,7 @@ canvasXpress(
           { src: 'plugin/search/search.js', async: true },
           { src: 'plugin/zoom-js/zoom.js', async: true },
           { src: 'plugin/notes/notes.js', async: true },
-          { src: 'plugin/canvasXpress/canvasXpress.js', async: true }
+          { src: 'plugin/canvasXpress/canvasXpress.js' }
         ]
       });
 

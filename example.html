@@ -109,12 +109,22 @@
     <script type="text/javascript" src="../canvas/js/build/canvasXpress.doc.js"></script>
     
     <style>
-      div.cx-data img.cx-data-transparent {
+      div.cx-data img.CanvasXpress-transparent {
         margin: 0px; 
         border: 0px;
         background: rgba(0,0,0,0);
         box-shadow: 0 0 10px rgba(0,0,0,0);
         opacity: 0;
+      }
+      div.cx-data img.CanvasXpress {
+        margin: 0px; 
+        border: 0px;
+        background: rgba(0,0,0,0);
+        box-shadow: 0 0 10px rgba(0,0,0,0);
+        -webkit-transition: opacity 1s ease-in-out;
+        -moz-transition: opacity 1s ease-in-out;
+        -o-transition: opacity 1s ease-in-out;
+        transition: opacity 1s ease-in-out;
       }
       div.cx-data img.cx-data {
         margin: 0px; 
@@ -133,7 +143,7 @@
         top: -100px;
         left: 0px;
       }
-      div.cx-destroy img.cx-data {
+      div.cx-destroy img.CanvasXpress {
         margin: 0px; 
         border: 0px;
         background: rgba(0,0,0,0);
@@ -193,14 +203,14 @@
             <div class="side">
               <div class="cx-block">
                 <div class="cx-data">
-                  <img class="cx-data" id="keggNoEx" src="./images/keggNoEx.png">
+                  <img class="CanvasXpress" id="keggNoEx" src="./images/keggNoEx.png">
                 </div>
               </div>
             </div>
             <div class="side">
               <div class="cx-block">
                 <div class="cx-data">
-                  <img class="cx-data" id="keggEx" src="./images/keggEx.png">
+                  <img class="CanvasXpress" id="keggEx" src="./images/keggEx.png">
                 </div>
               </div>
             </div>
