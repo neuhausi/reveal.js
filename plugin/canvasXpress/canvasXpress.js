@@ -11,6 +11,18 @@ var RevealCanvasXpress = window.RevealCanvasXpress || (function() {
 		for ( var i = 0; i < images.length; i++) {
 	    images[i].style.transform = 'scale(' + (1 / Reveal.getScale()) + ')';
 		}
+		var canvases = document.querySelectorAll("canvas.CanvasXpress");		
+		for ( var i = 0; i < canvases.length; i++) {
+	    canvases[i].parentNode.style.transform = 'scale(' + (1 / Reveal.getScale()) + ')';
+			canvases[i]['data-responsive'] = true;
+			canvases[i]['data-aspectRatio'] = parseInt(canvases[i].clientWidth) + ':' + parseInt(canvases[i].clientHeight);
+			if (canvases[i].hasAttribute('data-src') && canvases[i].id) {			
+				var cx = new CanvasXpress({
+					renderTo : canvases[i].id,
+					data : canvases[i].getAttribute('data-src')
+				});
+			}
+		}
 	});
 
 	Reveal.addEventListener('slidechanged', function(event) {
