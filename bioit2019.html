@@ -96,10 +96,8 @@
     <div class="reveal">
       <div class="slides">
         <section data-transition="convex-in fade-out" data-background-image="./images/vL5c6W.png">
-          <h2>CanvasXpress: A Javascript library for Reproducible Research</h2>
-          <p>
-            More examples @ <a href="https://canvasxpress.org/html/index.html">canvasXpress.org</a>
-          </p>
+          <h2>CanvasXpress: A <i>JavaScript</i> library for Reproducible Research</h2>
+          <h2 class="menu-title">BioIT 2019</h2>
           <p><a href="mailto:imnphd@gmail.com">Isaac Neuhaus</a></p>
         </section>
         <!-- Outline -->
@@ -146,6 +144,10 @@
           27 : null // Needed by canvasXpres to reset the graph
         },
         
+        toolbar: {
+          notes: true
+        },
+        
         dependencies: [
           { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
           { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
@@ -154,6 +156,8 @@
           { src: 'plugin/search/search.js', async: true },
           { src: 'plugin/zoom-js/zoom.js', async: true },
           { src: 'plugin/notes/notes.js', async: true },
+          { src: 'plugin/menu/menu.js' },
+          { src: 'plugin/toolbar/toolbar.js' },
           { src: 'plugin/canvasXpress/canvasXpress.js' }
         ]
       });
