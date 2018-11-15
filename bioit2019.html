@@ -25,6 +25,12 @@
     </script>
     
     <style>
+      html.dim-background2 .slide-background {
+        opacity: 0.2 !important;
+      }
+      html.dim-background4 .slide-background {
+        opacity: 0.4 !important;
+      }
       div.cx-canvas {
 
       } 
@@ -96,19 +102,32 @@
     <div class="reveal">
       <div class="slides">
         <section data-transition="convex-in fade-out" data-background-image="./images/vL5c6W.png">
-          <h2>CanvasXpress: A <i>JavaScript</i> library for Reproducible Research</h2>
-          <h2 class="menu-title">BioIT 2019</h2>
-          <p><a href="mailto:imnphd@gmail.com">Isaac Neuhaus</a></p>
+          <h3>CanvasXpress: Analytics JavaScript Library for Reproducible Research</h3>
+          <h3 class="menu-title">BioIT 2019</h3>
+          <p><a href="mailto:imnphd@gmail.com">Bristol Myers Squibb - Isaac Neuhaus</a></p>
         </section>
         <!-- Outline -->
-        <section data-transition="convex-in fade-out">
+        <section data-transition="convex-in fade-out" data-state="dim-background2" data-background-image="./images/retro.png">
           <h2>Features</h2>
-          <p align="left"><a href="#/2">Open source JavaScript library</a></p>
-          <p align="left"><a href="#/4">Used in a web environment or as an R package</a></p>
-          <p align="left"><a href="#/10">Support for many standard data formats</a></p>
-          <p align="left"><a href="#/15">Rich interface to overlay experimental data</a></p>
-          <p align="left"><a href="#/19">Built with Reproducible Research in mind</a></p>
+          <p align="left">Open source JavaScript library</p>
+          <p align="left">Used in a web environment or as an R package</p>
+          <p align="left">Support for many standard data formats</p>
+          <p align="left">Rich user interfaces to customize visualization</p>
+          <p align="left">Built with Reproducible Research in mind</p>
         </section>
+        <!-- Motivation -->
+        <section data-transition="convex-in fade-out" data-state="dim-background4" data-background-image="./images/lines.png">
+          <section>
+            <h2>Motivation</h2>
+            <p align="left">Simple turn-key app to plug in data sets</p>
+            <p align="left">Unobtrusive and rich user interfaces</p>
+            <p align="left">Able to handle a million data points</p>
+          </section>
+          <section>
+           <h2>SVG vs CANVAS</h2>
+          </section>
+          
+        </section>        
         <!-- General -->
         <section data-transition="convex-in fade-out">
           <h2>CanvasXpress</h2>
@@ -156,8 +175,8 @@
           { src: 'plugin/search/search.js', async: true },
           { src: 'plugin/zoom-js/zoom.js', async: true },
           { src: 'plugin/notes/notes.js', async: true },
-          { src: 'plugin/menu/menu.js' },
-          { src: 'plugin/toolbar/toolbar.js' },
+          //{ src: 'plugin/menu/menu.js' },
+          //{ src: 'plugin/toolbar/toolbar.js' },
           { src: 'plugin/canvasXpress/canvasXpress.js' }
         ]
       });
