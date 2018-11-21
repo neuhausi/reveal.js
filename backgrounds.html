@@ -1,0 +1,190 @@
+<!doctype html>
+<html>
+  <head>
+  
+    <meta charset="utf-8">
+    <meta name="description" content="Networks with CanvasXpress">
+    <meta name="author" content="Isaac Neuhaus">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>CanavasXpress Networks</title>
+
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/sky.css">
+
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="lib/css/zenburn.css">
+
+    <!-- Printing and PDF exports -->
+    <script>
+      var link = document.createElement( 'link' );
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+      document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
+    
+    <style>
+      div.cx-canvas {
+
+      } 
+      div.cx-data img.CanvasXpress-transparent {
+        margin: 0px; 
+        border: 0px;
+        background: rgba(0,0,0,0);
+        box-shadow: 0 0 10px rgba(0,0,0,0);
+        opacity: 0;
+      }
+      div.cx-data img.CanvasXpress {
+        border: 0px;
+        background: rgba(0,0,0,0);
+        box-shadow: 0 0 10px rgba(0,0,0,0);
+        -webkit-transition: opacity 1s ease-in-out;
+        -moz-transition: opacity 1s ease-in-out;
+        -o-transition: opacity 1s ease-in-out;
+        transition: opacity 1s ease-in-out;
+      }
+      div.cx-data img.cx-data {
+        border: 0px;
+        background: rgba(0,0,0,0);
+        box-shadow: 0 0 10px rgba(0,0,0,0);
+        -webkit-transition: opacity 1s ease-in-out;
+        -moz-transition: opacity 1s ease-in-out;
+        -o-transition: opacity 1s ease-in-out;
+        transition: opacity 1s ease-in-out;
+      }
+      div.cx-destroy img.CanvasXpress {
+        border: 0px;
+        background: rgba(0,0,0,0);
+        box-shadow: 0 0 10px rgba(0,0,0,0);
+      }
+      div.cx-data {
+        position: absolute;
+        width: 100%; 
+      }
+      div.cx-destroy {
+        position: absolute;
+      }
+      div.cx-block {
+        position: relative; 
+      }
+      .side-by-side {
+        display: -webkit-flex;
+        display: -moz-flex;
+        display: flex;
+        box-sizing: border-box;
+      }
+      .side-by-side .side + .side {
+         margin-left: 2rem;
+      }      
+      .side-by-side .side {
+        -webkit-flex: 1 0 0;
+        -moz-flex: 1 0 0;
+        flex: 1 0 0;
+      }
+    </style>
+
+    <!-- CanvasXpress --> 
+    <!-- Must be specified last to avoid conflicts with CSS --> 
+    <link rel="stylesheet" href="https://canvasxpress.org/css/canvasXpress.css" type="text/css">
+    <script type="text/javascript" src="https://canvasxpress.org/js/canvasXpress.min.js"></script>
+
+  </head>
+  
+  <body>
+  
+    <div class="reveal">
+      <div class="slides">
+        <section data-transition="convex-in fade-out" data-background-image="./images/vL5c6W.png">
+        </section>
+        <section data-transition="convex-in fade-out" data-background-image="./images/blueWave.jpg">
+        </section>
+        <section data-transition="convex-in fade-out" data-background-image="./images/blueWave2.jpg">
+        </section>
+        <section data-transition="convex-in fade-out" data-background-image="./images/blueWave3.jpg">
+        </section>
+        <section data-transition="convex-in fade-out" data-background-image="./images/binary.png">
+        </section>
+        <section data-transition="convex-in fade-out" data-background-image="./images/bubbles.png">
+        </section>
+        <section data-transition="convex-in fade-out" data-background-image="./images/world.png">
+        </section>
+        <section data-transition="convex-in fade-out" data-background-image="./images/digitalHealth.jpeg">
+        </section>
+        <section data-transition="convex-in fade-out" data-background-image="./images/dnaBlueBackground.jpg">
+        </section>
+        <section data-transition="convex-in fade-out" data-background-image="./images/pharma1.jpg">
+        </section>
+        <section data-transition="convex-in fade-out" data-background-image="./images/neuroSemantics.jpg">
+        </section>
+        <section data-transition="convex-in fade-out" data-background-image="./images/behavioralEconomics.png">
+        </section>
+        <section data-transition="convex-in fade-out" data-background-image="./images/bigData.png">
+        </section>
+        <section data-transition="convex-in fade-out" data-background-image="./images/transparentBackgroundColorful.png">
+        </section>
+        <section data-transition="convex-in fade-out" data-background-image="./images/abstract2.png">
+        </section>
+        <section data-transition="convex-in fade-out" data-background-image="./images/swirlRainbow.png">
+        </section>
+        <section data-transition="convex-in fade-out" data-background-image="./images/retro.png">
+        </section>
+        <section data-transition="convex-in fade-out" data-background-image="./images/lines.png">
+        </section>
+        <section data-transition="convex-in fade-out" data-background-image="./images/lines2.png">
+        </section>
+        <section class="stretch" data-transition="convex-in fade-out" data-background-image="./images/interesting.png">
+        </section>
+        <section data-transition="convex-in fade-out" data-background-image="./images/matrix-2354492.jpg">
+        </section>
+      </div>
+    </div>
+
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.js"></script>
+
+    <script>
+    
+      // More info https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+
+        transition: 'linear', // default/cube/page/concave/zoom/linear/fade/none,
+        transitionSpeed: 'slow',
+
+        // Zooming config
+        zoomKey: 'alt',
+        zoomLevel: 3,
+        
+        // Keyboard
+        keyboard: {
+          27 : null // Needed by canvasXpres to reset the graph
+        },
+        
+        toolbar: {
+          notes: true
+        },
+        
+        dependencies: [
+          { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+          { src: 'plugin/search/search.js', async: true },
+          { src: 'plugin/zoom-js/zoom.js', async: true },
+          { src: 'plugin/notes/notes.js', async: true },
+          { src: 'plugin/menu/menu.js' },
+          { src: 'plugin/toolbar/toolbar.js' },
+          { src: 'plugin/canvasXpress/canvasXpress.js' }
+        ]
+      });
+
+    </script>
+    
+  </body>
+  
+</html>
