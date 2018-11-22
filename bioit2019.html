@@ -249,7 +249,7 @@ vignette("getting_started", package = "canvasXpress")
 vignette("additional_examples", package = "canvasXpress")            
             </code>
           </pre>
-          <h3>- Shiny -</h3>
+          <h3>Shiny</h3>
           <pre>
             <code class="hljs R" style="line-height:20px; font-size:large; max-height:800px;">
 #List example names
@@ -271,11 +271,16 @@ cxShinyExample(example = "example1")
         <section data-transition="convex-in fade-out" data-state="dim-background4" data-background-image="./images/lines.png">
           <h3>CanvasXpress in R Console</h3>
           <pre>
-            <code class="hljs R" style="line-height:20px; font-size:large; max-height:800px;">
-
-
+            <code class="hljs R" style="line-height:20px; font-size:large; max-height:300px;">
+data <- t(iris[,1:4])
+varAnnot <- as.matrix(iris[,5])
+colnames(varAnnot) <- "Species"
+canvasXpress(t(data), varAnnot=varAnnot, scatterPlotMatrix=1, colorBy="Species")
             </code>
           </pre>
+          <div class="cx-canvas">
+            <canvas class="CanvasXpress" width=500 height=300 id="scatterPlotMatrix" data-src="http://localhost:8001/images/scatterPlotMatrix.png"></canvas>
+          </div>          
         </section>
         <!-- R-Studio -->        
         <section data-transition="convex-in fade-out" data-state="dim-background4" data-background-image="./images/lines.png">
