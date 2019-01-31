@@ -1,3 +1,113 @@
+/**.
+
+circle-cont1 {
+  margin: auto !important; 
+  position: relative;
+  width: 500px;
+  height: 500px;
+  background: transparent;
+  animation: rotation1 1s linear 0s normal none;
+}
+.circle-cont2 {
+  margin: auto !important; 
+  position: relative;
+  width: 500px;
+  height: 500px;
+  background: transparent;
+  animation: rotation2 1s linear 0s normal none;
+}
+.circle-cont3 {
+  margin: auto !important; 
+  position: relative;
+  width: 500px;
+  height: 500px;
+  background: transparent;
+  animation: rotation3 1s linear 0s normal none;
+}
+.circle-cont4 {
+  margin: auto !important; 
+  position: relative;
+  width: 500px;
+  height: 500px;
+  background: transparent;
+  animation: rotation4 1s linear 0s normal none;
+}
+.circle-cont5 {
+  margin: auto !important; 
+  position: relative;
+  width: 500px;
+  height: 500px;
+  background: transparent;
+  animation: rotation5 1s linear 0s normal none;
+}
+.circle1 {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  opacity: 0.7;
+  transform: rotate(0deg) translateX(200px);
+  background: #ff504f;
+}
+.circle2 {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  opacity: 0.7;
+  transform: rotate(72deg) translateX(200px);
+  background: #ffe63d;
+}
+.circle3 {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  opacity: 0.7;
+  transform: rotate(144deg) translateX(200px);
+  background: #50dc64;
+}
+.circle4 {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  opacity: 0.7;
+  transform: rotate(216deg) translateX(200px);
+  background: #41c39d;
+}
+.circle5 {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  opacity: 0.7;
+  transform: rotate(288deg) translateX(200px);
+  background: #4db5dc;
+}
+@keyframes rotation1 {
+  from { transform: rotate(-100deg); }
+  to { transform: rotate(0deg); }
+}
+@keyframes rotation2 {
+  from { transform: rotate(-100deg); }
+  to { transform: rotate(72deg); }
+}
+@keyframes rotation3 {
+  from { transform: rotate(-100deg); }
+  to { transform: rotate(144deg); }
+}
+
 .circle-container {
   margin: auto !important; 
   position: relative;
@@ -59,8 +169,7 @@
   transform: rotate(288deg) translateX(150px);
   background: #4db5dc;
 }
-/* Animations */
-/*************************************************/
+
 @-webkit-keyframes rotation {
   from {
     -webkit-transform: rotate(0deg);
@@ -99,5 +208,89 @@
   }
   to {
     transform: rotate(360deg);
+  }
+}
+
+**/
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.circle {
+  width: 40px;
+  height: 40px;
+  background: red;
+  border-radius: 50%;
+  offset-path: path("M0,0a72.5,72.5 0 1,0 145,0a72.5,72.5 0 1,0 -145,0");
+  offset-rotate: 0deg;
+  position: relative;
+  transform: scale(1.5);
+}
+
+.circle-1 {
+  width: 30px;
+  height: 30px;
+  background: #814AB1;
+}
+
+.circle-2 {
+  width: 25px;
+  height: 25px;
+  background: #4CBDC9;
+  left: -30px;
+}
+
+.circle-3 {
+  width: 20px;
+  height: 20px;
+  background: #FFCE24;
+  left: -55px;
+}
+
+.circle-4 {
+  width: 15px;
+  height: 15px;
+  background: #FF2D74;
+  left: -75px;
+}
+
+.circle-1 {
+  animation: load 1.8s cubic-bezier(0.86, 0, 0.07, 1);
+  animation-delay: 0.147s;
+  animation-fill-mode: forwards;
+  z-index: 99;
+}
+
+.circle-2 {
+  animation: load 1.8s cubic-bezier(0.86, 0, 0.07, 1);
+  animation-delay: 0.294s;
+  animation-fill-mode: forwards;
+  z-index: 98;
+}
+
+.circle-3 {
+  animation: load 1.8s cubic-bezier(0.86, 0, 0.07, 1);
+  animation-delay: 0.441s;
+  animation-fill-mode: forwards;
+  z-index: 97;
+}
+
+.circle-4 {
+  animation: load 1.8s cubic-bezier(0.86, 0, 0.07, 1);
+  animation-delay: 0.588s;
+  animation-fill-mode: forwards;
+  z-index: 96;
+}
+
+@keyframes load {
+  from {
+    offset-distance: 0;
+  }
+  to {
+    offset-distance: 100%;
   }
 }
