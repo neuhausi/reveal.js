@@ -1,287 +1,97 @@
-.circle-cont {
-  margin: auto !important; 
-  position: relative;
-  height: 482px;
-  width: 522px;
-}
-.circle1 {
-  position: absolute;
-  top: 0px;
-  left: 200px;
-  width: 120px;
-  height: 120px;
-  line-height: 120px !important;
-  font-size: large !important;
-  border-radius: 50%;
-  opacity: 0.7;
-  animation: circular1 1s linear;
-  background: #ff504f;
-}
-.circle2 {
-  position: absolute;
-  top: 138px;
-  left: 10px;
-  width: 120px;
-  height: 120px;
-  line-height: 120px !important;
-  font-size: large !important;
-  border-radius: 50%;
-  opacity: 0.7;
-  animation: circular2 10s linear;
-  background: #ffe63d;
-}
-.circle3 {
-  position: absolute;
-  top: 362px;
-  left: 82px;
-  width: 120px;
-  height: 120px;
-  line-height: 120px !important;
-  font-size: large !important;
-  border-radius: 50%;
-  opacity: 0.7;
-  animation: circular3 4s linear;
-  background: #50dc64;
-}
-.circle4 {
-  position: absolute;
-  top: 362px;
-  left: 318px;
-  width: 120px;
-  height: 120px;
-  line-height: 120px !important;
-  font-size: large !important;
-  border-radius: 50%;
-  opacity: 0.7;
-  animation: circular4 4s linear;
-  background: #41c39d;
-}
-.circle5 {
-  position: absolute;
-  top: 130px;
-  left: 390px;
-  width: 120px;
-  height: 120px;
-  line-height: 120px !important;
-  font-size: large !important;
-  border-radius: 50%;
-  opacity: 0.7;
-  animation: circular5 4s linear;
-  background: #4db5dc;
-}
-
-@keyframes circular1 {
-  from { transform: rotate(0deg) translate(0px,0px) rotate(0deg) ; }
-  to   { transform: rotate(0deg) translate(0px,0px) rotate(0deg); }
-}
-
-@keyframes circular2 {
-  from { transform: rotate(216deg) translate(-72px,-362px) rotate(-216deg); }
-  to   { transform: rotate(288deg) translate(0px,0px) rotate(-288deg); }
-}
-
-@keyframes circular3a {
-  from { transform: rotate(0deg) translate(118px,-362px) rotate(0deg) ; }
-  to   { transform: rotate(216deg) translate(0px,0px) rotate(-216deg) ; }
-}
-
-@keyframes circular4a {
-  from { transform: rotate(0deg) translate(-118px,-362px) rotate(0deg) ; }
-  to   { transform: rotate(144deg) translate(0px,0px) rotate(-144deg) ; }
-}
-
-@keyframes circular5a {
-  from { transform: rotate(0deg) translate(-190px,-130px) rotate(0deg); }
-  to   { transform: rotate(72deg) translate(0px,0px) rotate(-72deg) ; }
-}
-
-/**
-
-@keyframes circular1 {
-  from { transform: rotate(0deg) translateX(200px) rotate(0deg); }
-  to   { transform: rotate(360deg) translateX(200px) rotate(-360deg); }
-}
-
-@keyframes circular2 {
-  from { transform: rotate(0deg) translateX(200px) rotate(0deg); }
-  to   { transform: rotate(360deg) translateX(200px) rotate(-360deg); }
-}
-
-@keyframes circular3 {
-  from { transform: rotate(0deg) translateX(200px) rotate(0deg); }
-  to   { transform: rotate(360deg) translateX(200px) rotate(-360deg); }
-}
-
-@keyframes circular4 {
-  from { transform: rotate(0deg) translateX(200px) rotate(0deg); }
-  to   { transform: rotate(360deg) translateX(200px) rotate(-360deg); }
-}
-
-@keyframes circular5 {
-  from { transform: rotate(0deg) translateX(200px) rotate(0deg); }
-  to   { transform: rotate(360deg) translateX(200px) rotate(-360deg); }
-}
-**/
-
 .circle-container {
-  margin: auto !important; 
-  position: relative;
-  width: 440px;
-  height: 440px;
-  background: transparent;
-  -webkit-animation: rotation 6s linear 0s normal none;
-  -moz-animation: rotation 6s linear 0s normal none;
-  -ms-animation: rotation 6s linear 0s normal none;
-  -o-animation: rotation 6s linear 0s normal none;
-  animation: rotation 6s linear 0s normal none;
-}
-.circle {
-  position: absolute;
-  top: 170px;
-  left: 170px;
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  opacity: 0.7;
-}
-.circle:nth-child(1) {
-  -webkit-transform: rotate(0deg) translateX(150px);
-  -moz-transform: rotate(0deg) translateX(150px);
-  -ms-transform: rotate(0deg) translateX(150px);
-  -o-transform: rotate(0deg) translateX(150px);
-  transform: rotate(0deg) translateX(150px);
-  background: #ff504f;
-}
-.circle:nth-child(2) {
-  -webkit-transform: rotate(72deg) translateX(150px);
-  -moz-transform: rotate(72deg) translateX(150px);
-  -ms-transform: rotate(72deg) translateX(150px);
-  -o-transform: rotate(72deg) translateX(150px);
-  transform: rotate(72deg) translateX(150px);
-  background: #ffe63d;
-}
-.circle:nth-child(3) {
-  -webkit-transform: rotate(144deg) translateX(150px);
-  -moz-transform: rotate(144deg) translateX(150px);
-  -ms-transform: rotate(144deg) translateX(150px);
-  -o-transform: rotate(144deg) translateX(150px);
-  transform: rotate(144deg) translateX(150px);
-  background: #50dc64;
-}
-.circle:nth-child(4) {
-  -webkit-transform: rotate(216deg) translateX(150px);
-  -moz-transform: rotate(216deg) translateX(150px);
-  -ms-transform: rotate(216deg) translateX(150px);
-  -o-transform: rotate(216deg) translateX(150px);
-  transform: rotate(216deg) translateX(150px);
-  background: #41c39d;
-}
-.circle:nth-child(5) {
-  -webkit-transform: rotate(288deg) translateX(150px);
-  -moz-transform: rotate(288deg) translateX(150px);
-  -ms-transform: rotate(288deg) translateX(150px);
-  -o-transform: rotate(288deg) translateX(150px);
-  transform: rotate(288deg) translateX(150px);
-  background: #4db5dc;
-}
-
-@-webkit-keyframes rotation {
-  from {
-    -webkit-transform: rotate(0deg);
-  }
-  to {
-    -webkit-transform: rotate(360deg);
-  }
-}
-@-moz-keyframes rotation {
-  from {
-    -moz-transform: rotate(0deg);
-  }
-  to {
-    -moz-transform: rotate(360deg);
-  }
-}
-@-ms-keyframes rotation {
-  from {
-    -ms-transform: rotate(0deg);
-  }
-  to {
-    -ms-transform: rotate(360deg);
-  }
-}
-@-o-keyframes rotation {
-  from {
-    -o-transform: rotate(0deg);
-  }
-  to {
-    -o-transform: rotate(360deg);
-  }
-}
-@keyframes rotation {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@keyframes rotate {
-  0%, 50% {
-    transform: rotate(0deg) translateY(-200px) rotate(0deg);
-  }
-}
-
-#centre {
   position: fixed;
   left: 50%;
   top: 50%;
   transform: rotateZ(0.01deg); /* IE 10 bug */
 }
 
-.circle2 {
+.circle {
   border-radius: 50%;
   position: absolute;
+  line-height: 180px !important;
 }
 
 .outer {
   animation: rotate 2s ease-out 1;
-  height: 120px;
-  width: 120px;
-  left: -60px;
-  top: -60px;
+  height: 180px;
+  width: 180px;
+  left: -90px;
+  top: -90px;
 }
 
+.key {
+  width : 300px;
+  height : 300px;
+  position : relative;
+  left: -50%;
+  top: -150px;
+  z-index : 1;
+}
 
-.at-2-oclock {
+.circle60 {
   background-color: blue;
-  transform: rotate(60deg) translateY(-200px) rotate(-60deg);
-  z-index: 1;
+  transform: rotate(60deg) translateY(-250px) rotate(-60deg);
+  opacity: 0.75;
 }
 
-.at-4-oclock {
+.circle72 {
+  background-color: #8f715b;
+  transform: rotate(72deg) translateY(-250px) rotate(-72deg);
+  opacity: 0.75;
+}
+
+.circle120 {
   background-color: purple;
-  transform: rotate(120deg) translateY(-200px) rotate(-120deg);
+  transform: rotate(120deg) translateY(-250px) rotate(-120deg);
+  opacity: 0.75;
 }
 
-.at-6-oclock {
+.circle144 {
+  background-color: #f1931b;
+  transform: rotate(144deg) translateY(-250px) rotate(-144deg);
+  opacity: 0.75;
+}
+
+.circle180 {
   background-color: purple;
-  transform: rotate(180deg) translateY(-200px) rotate(-180deg);
+  transform: rotate(180deg) translateY(-250px) rotate(-180deg);
+  opacity: 0.75;
 }
 
-.at-8-oclock {
+.circle216 {
+  background-color: #f3d4a0;
+  transform: rotate(216deg) translateY(-250px) rotate(-216deg);
+  opacity: 0.75;
+}
+
+.circle240 {
   background-color: red;
-  transform: rotate(240deg) translateY(-200px) rotate(-240deg);
+  transform: rotate(240deg) translateY(-250px) rotate(-240deg);
+  opacity: 0.75;
 }
 
-.at-10-oclock {
+.circle288 {
+  background-color: #d6618f;
+  transform: rotate(288deg) translateY(-250px) rotate(-288deg);
+  opacity: 0.75;
+}
+
+.circle300 {
   background-color: yellow;
-  transform: rotate(300deg) translateY(-200px) rotate(-300deg);
+  transform: rotate(300deg) translateY(-250px) rotate(-250deg);
+  opacity: 0.75;
 }
 
-.at-12-oclock {
-  background-color: green;
-  transform: rotate(360deg) translateY(-200px) rotate(-360deg);
-  z-index: 2;
+.circle360 {
+  background-color: #c0334d;
+  transform: rotate(360deg) translateY(-250px) rotate(-360deg);
+  opacity: 0.75;
 }
 
+@keyframes rotate {
+  0%, 50% { transform: rotate(0deg) translateY(-250px) rotate(0deg); }
+}
+
+.hide {
+  display : none;
+}

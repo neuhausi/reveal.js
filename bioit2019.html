@@ -470,37 +470,13 @@ renderCanvasXpress({
         </section>
         <!-- Why -->
         <section data-transition="convex-in fade-out" data-state="dim-background2" data-background-image="./images/retro.png">
-          <h3>Why?</h3>
-          <div class="circle-container">
-            <div class="circle"><span class="circle-text">Scalable</span></div>
-            <div class="circle"><span class="circle-text">Table View</span></div>
-            <div class="circle"><span class="circle-text">Filters</span></div>
-            <div class="circle"><span class="circle-text">Customizable</span></div>
-            <div class="circle"><span class="circle-text">Trackable</span></div>
-          </div>
-          <div style="width:25%; margin:auto;">
-            <img src="./images/key.png">
-          </div>
-        </section>
-        <!-- Why -->
-        <section data-transition="convex-in fade-out" data-state="dim-background2" data-background-image="./images/retro.png">
-          <div class="circle-cont">
-            <div class="circle1">Scalable</div>
-            <div class="circle2">Table View</div>
-            <div class="circle3">Filters</div>
-            <div class="circle4">Customizable</div>
-            <div class="circle5">Trackable</div>
-          </div>
-        </section>
-        <!-- Why -->
-        <section data-transition="convex-in fade-out" data-state="dim-background2" data-background-image="./images/retro.png">
-          <div id="centre">
-            <div class="outer circle2 at-8-oclock">Abc</div>
-            <div class="outer circle2 at-10-oclock">Bcd</div>
-            <div class="outer circle2 at-12-oclock">Cde</div>
-            <div class="outer circle2 at-2-oclock">Def</div>
-            <div class="outer circle2 at-4-oclock">Efg</div>
-            <div class="outer circle2 at-6-oclock">Fgh</div>
+          <div class="circle-container hide">
+            <img class="outer key" src="./images/key.png">            
+            <div class="outer circle circle72">Scalable</div>
+            <div class="outer circle circle144">Table</div>
+            <div class="outer circle circle216">Filter</div>
+            <div class="outer circle circle288">Audit</div>
+            <div class="outer circle circle360">Custom</div>
           </div>
         </section>        
         <!-- General -->
@@ -518,7 +494,6 @@ renderCanvasXpress({
 
     <script>
     
-      // More info https://github.com/hakimel/reveal.js#configuration
       Reveal.initialize({
         
         controls: true,
@@ -556,6 +531,23 @@ renderCanvasXpress({
         ]
       });
 
+      Reveal.addEventListener( 'slidechanged', function( event ) {
+      	if (event.currentSlide && event.currentSlide.classList) {
+      	  var cont = event.currentSlide.firstChild.nextElementSibling;
+      	  if (cont.classList && cont.classList.contains("hide")) {
+            cont.classList.remove("hide");
+            cont.classList.add("show");
+      	  }
+      	}
+      	if (event.previousSlide && event.previousSlide.classList) {
+          var cont = event.previousSlide.firstChild.nextElementSibling;
+          if (cont.classList && cont.classList.contains("show")) {
+            cont.classList.add("hide");
+            cont.classList.remove("show");
+          }
+      	}
+      });
+      
     </script>
     
   </body>
