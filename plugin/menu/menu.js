@@ -846,7 +846,7 @@ var RevealMenu = window.RevealMenu || (function(){
 				}
 			}
 
-			Reveal.addKeyBinding({keyCode: 77, key: 'M', description: 'Toggle menu'}, toggleMenu);
+			//Reveal.addKeyBinding({keyCode: 77, key: 'M', description: 'Toggle menu'}, toggleMenu);
 
 			dispatchEvent('menu-ready');
 		}

@@ -12,7 +12,7 @@
 }
 
 .outer {
-  animation: rotate 2s ease-out 1;
+  animation: rotate 5s ease-out 1;
   height: 180px;
   width: 180px;
   left: -90px;
