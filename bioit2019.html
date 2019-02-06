@@ -93,6 +93,9 @@
       }
     </style>
 
+    <!-- D3 -->
+    <script type="text/javascript" src="http://d3js.org/d3.v4.js"></script>
+
     <!-- CanvasXpress --> 
     <!-- Must be specified last to avoid conflicts with CSS --> 
     <link rel="stylesheet" href="https://canvasxpress.org/css/canvasXpress.css" type="text/css">
@@ -138,7 +141,7 @@
             <div class="outer circle circle72">Scalable</div>
             <div class="outer circle circle144">Table</div>
             <div class="outer circle circle216">Filter</div>
-            <div class="outer circle circle288">Audit</div>
+            <div class="outer circle circle288">Auditable</div>
             <div class="outer circle circle360">Custom</div>
           </div>
           <aside class="notes">
@@ -165,6 +168,7 @@
           </section>
           <section>
            <h2>SVG vs CANVAS</h2>
+           <div id="my_dataviz"></div>
           </section>          
         </section>
         <!-- Brief Tutorial -->
@@ -575,6 +579,9 @@ renderCanvasXpress({
       });
       
     </script>
+
+    <!-- D3 -->
+    <script type="text/javascript" src="./d3/example.js"></script>
     
   </body>
   
