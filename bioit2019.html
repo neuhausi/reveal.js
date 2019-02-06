@@ -137,12 +137,12 @@
         <!-- Why -->
         <section data-transition="convex-in fade-out" data-state="dim-background2" data-background-image="./images/retro.png" data-menu-title="Why CanvasXpress?">
           <div class="circle-container hide">
-            <img class="outer key" src="./images/key.png">            
-            <div class="outer circle circle72">Scalable</div>
-            <div class="outer circle circle144">Table</div>
-            <div class="outer circle circle216">Filter</div>
-            <div class="outer circle circle288">Auditable</div>
-            <div class="outer circle circle360">Custom</div>
+            <img class="outer key" src="./images/key.png">
+            <div class="outer circle circle72"><span>Scalable</span></div>
+            <div class="outer circle circle144"><span>Table</span></div>
+            <div class="outer circle circle216"><span>Filter</span></div>
+            <div class="outer circle circle288"><span>Auditable</span></div>
+            <div class="outer circle circle360"><span>Custom</span></div>
           </div>
           <aside class="notes">
             Why did I want?
@@ -161,14 +161,10 @@
         <!-- Motivation -->
         <section data-transition="convex-in fade-out" data-state="dim-background4" data-background-image="./images/lines.png">
           <section>
-            <h2>Motivation</h2>
-            <p align="left">Simple turn-key app to plug in data sets</p>
-            <p align="left">Unobtrusive and rich user interfaces</p>
-            <p align="left">Able to handle a million data points</p>
-          </section>
-          <section>
            <h2>SVG vs CANVAS</h2>
-           <div id="my_dataviz"></div>
+           <div class="hide">
+             <img class="spin" src="./images/canvas-svg.png">
+           </div>
           </section>          
         </section>
         <!-- Brief Tutorial -->
@@ -563,17 +559,23 @@ renderCanvasXpress({
 
       Reveal.addEventListener( 'slidechanged', function( event ) {
       	if (event.currentSlide && event.currentSlide.classList) {
-      	  var cont = event.currentSlide.firstChild.nextElementSibling;
-      	  if (cont.classList && cont.classList.contains("hide")) {
-            cont.classList.remove("hide");
-            cont.classList.add("show");
+      	  var divs = event.currentSlide.getElementsByTagName("DIV");
+      	  for (var i = 0; i < divs.length; i++) {
+        	var cont = divs[i];
+        	if (cont.classList && cont.classList.contains("hide")) {
+              cont.classList.remove("hide");
+              cont.classList.add("show");
+      	    }
       	  }
       	}
       	if (event.previousSlide && event.previousSlide.classList) {
-          var cont = event.previousSlide.firstChild.nextElementSibling;
-          if (cont.classList && cont.classList.contains("show")) {
-            cont.classList.add("hide");
-            cont.classList.remove("show");
+          var divs = event.previousSlide.getElementsByTagName("DIV");
+          for (var i = 0; i < divs.length; i++) {
+            var cont = divs[i];
+            if (cont.classList && cont.classList.contains("show")) {
+              cont.classList.add("hide");
+              cont.classList.remove("show");
+            }
           }
       	}
       });

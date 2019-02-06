@@ -4,6 +4,10 @@
     display: none;
 }
 
+.opaque {
+	opacity : 0;
+}
+
 /* Circle Slides */
 .circle-container {
 	color: aliceblue; position : fixed;
@@ -19,6 +23,7 @@
 	line-height: 180px !important;
 	font-size: xx-large !important;
 	opacity: 0;
+	z-index: 1;
 }
 
 .outer {
