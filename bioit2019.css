@@ -1,11 +1,12 @@
 /* All */
 
 .hide {
-    display: none;
+    visibility: hidden;
 }
 
-.opaque {
-	opacity : 0;
+.show {
+	display: block;
+	visibility: visible;
 }
 
 /* Circle Slides */

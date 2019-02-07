@@ -114,7 +114,7 @@
         </section>
         <!-- Other Libraries -->
         <section data-transition="convex-in fade-out" data-state="dim-background2" data-background-image="./images/retro.png" data-menu-title="Charting Libraries">
-          <div class="collage hide">
+          <div class="collage">
             <img class="spin" src="./images/zingchart_logo.png">
             <img class="spin" src="./images/Highcharts.png">
             <img class="spin" src="./images/Google-Charts.jpg">
@@ -136,7 +136,7 @@
         </section>
         <!-- Why -->
         <section data-transition="convex-in fade-out" data-state="dim-background2" data-background-image="./images/retro.png" data-menu-title="Why CanvasXpress?">
-          <div class="circle-container hide">
+          <div class="circle-container">
             <img class="outer key" src="./images/key.png">
             <div class="outer circle circle72"><span>Scalable</span></div>
             <div class="outer circle circle144"><span>Table</span></div>
@@ -162,7 +162,7 @@
         <section data-transition="convex-in fade-out" data-state="dim-background4" data-background-image="./images/lines.png">
           <section>
            <h2>SVG vs CANVAS</h2>
-           <div class="hide">
+           <div>
              <img class="spin" src="./images/canvas-svg.png">
            </div>
           </section>          
@@ -558,25 +558,19 @@ renderCanvasXpress({
       });
 
       Reveal.addEventListener( 'slidechanged', function( event ) {
+      	var animations = ["outer", "spin"];
       	if (event.currentSlide && event.currentSlide.classList) {
-      	  var divs = event.currentSlide.getElementsByTagName("DIV");
-      	  for (var i = 0; i < divs.length; i++) {
-        	var cont = divs[i];
-        	if (cont.classList && cont.classList.contains("hide")) {
-              cont.classList.remove("hide");
-              cont.classList.add("show");
-      	    }
-      	  }
-      	}
-      	if (event.previousSlide && event.previousSlide.classList) {
-          var divs = event.previousSlide.getElementsByTagName("DIV");
-          for (var i = 0; i < divs.length; i++) {
-            var cont = divs[i];
-            if (cont.classList && cont.classList.contains("show")) {
-              cont.classList.add("hide");
-              cont.classList.remove("show");
+      	  for (var i = 0; i < animations.length; i++) {
+      	  	var anm = animations[i];
+            // This will animate entrance and exit
+      	  	//var els = document.querySelectorAll('.' + anm);
+      	  	var els = event.currentSlide.querySelectorAll('.' + anm);
+            for (var j = 0; j < els.length; j++) {
+              els[j].classList.remove(anm);
+              void els[j].offsetWidth;
+              els[j].classList.add(anm);
             }
-          }
+      	  }	
       	}
       });
       
