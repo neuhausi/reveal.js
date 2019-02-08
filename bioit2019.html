@@ -134,20 +134,28 @@
             <img class="spin" src="./images/raphaeljs.png">
           </div>
         </section>
-        <!-- Why -->
-        <section data-transition="convex-in fade-out" data-state="dim-background2" data-background-image="./images/retro.png" data-menu-title="Why CanvasXpress?">
-          <div class="circle-container">
-            <img class="outer key" src="./images/key.png">
-            <div class="outer circle circle72"><span>Scalable</span></div>
-            <div class="outer circle circle144"><span>Table</span></div>
-            <div class="outer circle circle216"><span>Filter</span></div>
-            <div class="outer circle circle288"><span>Auditable</span></div>
-            <div class="outer circle circle360"><span>Custom</span></div>
-          </div>
-          <aside class="notes">
-            Why did I want?
-            Turn key system with many bell and whistles.
-          </aside>
+        <!-- Motivation -->
+        <section data-transition="convex-in fade-out" data-state="dim-background2" data-background-image="./images/retro.png">
+          <section data-transition="convex-in fade-out" data-menu-title="Motivation">
+            <div class="circle-container">
+              <img class="outer key" src="./images/key.png">
+              <div class="outer circle circle72"><span>Scalable</span></div>
+              <div class="outer circle circle144"><span>Table</span></div>
+              <div class="outer circle circle216"><span>Filter</span></div>
+              <div class="outer circle circle288"><span>Auditable</span></div>
+              <div class="outer circle circle360"><span>Custom</span></div>
+            </div>
+            <aside class="notes">
+              Why did I want?
+              Turn key system with many bell and whistles.
+            </aside>
+          </section>
+          <section data-transition="convex-in fade-out">
+           <h2>SVG vs CANVAS</h2>
+           <div>
+             <img class="spin" src="./images/canvas-svg.png">
+           </div>
+          </section>          
         </section>
         <!-- Outline -->
         <section data-transition="convex-in fade-out" data-state="dim-background2" data-background-image="./images/retro.png">
@@ -157,15 +165,6 @@
           <p align="left">Support for many standard data formats</p>
           <p align="left">Rich user interfaces to customize visualization</p>
           <p align="left">Built with Reproducible Research in mind</p>
-        </section>
-        <!-- Motivation -->
-        <section data-transition="convex-in fade-out" data-state="dim-background4" data-background-image="./images/lines.png">
-          <section>
-           <h2>SVG vs CANVAS</h2>
-           <div>
-             <img class="spin" src="./images/canvas-svg.png">
-           </div>
-          </section>          
         </section>
         <!-- Brief Tutorial -->
         <section data-transition="convex-in fade-out" data-state="dim-background4" data-background-image="./images/lines.png">
@@ -257,8 +256,12 @@
           </section>                    
           <section>
             <h3>Visualization</h3>
+            <div>
+            <h4>Different paradigm than other charting JS libraries</h4>
+            <h4>You may include data not needed in the initial plot... Why?</h4>
             <div class="cx-canvas">
               <canvas class="CanvasXpress" width=500 height=500 id="twoSeries" data-src="http://localhost:8001/data/twoSeries.json"></canvas>
+            </div>
             </div>
           </section>
         </section>
