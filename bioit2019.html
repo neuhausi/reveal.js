@@ -93,9 +93,6 @@
       }
     </style>
 
-    <!-- D3 -->
-    <script type="text/javascript" src="http://d3js.org/d3.v4.js"></script>
-
     <!-- CanvasXpress --> 
     <!-- Must be specified last to avoid conflicts with CSS --> 
     <link rel="stylesheet" href="https://canvasxpress.org/css/canvasXpress.css" type="text/css">
@@ -166,348 +163,20 @@
           <p align="left">Rich user interfaces to customize visualization</p>
           <p align="left">Built with Reproducible Research in mind</p>
         </section>
-        <!-- Brief Tutorial -->
-        <section data-transition="convex-in fade-out" data-state="dim-background4" data-background-image="./images/lines.png">
-          <section>
-            <h3>Usage in the Web</h3>
-            <pre>
-              <code class="hljs html" style="line-height:16px; font-size:medium; max-height:800px;">
-&lt;html&gt;
-
-  &lt;head&gt;  
-    &lt;link rel="stylesheet" href="path-to-canvasXpress.css" type="text/css"/&gt;
-    &lt;script type="text/javascript" src="path-to-canvasXpress.min.js"&gt;&lt;/script&gt;
-    &lt;script&gt;
-      onReady(function () { 
-        var cX = new CanvasXpress({
-          "renderTo": "canvasId", 
-          "data": {
-                    "y": {
-                       "vars": [ "Gene1"],
-                       "smps": [ "Smp1", "Smp2", "Smp3" ],
-                       "data": [ [ 10, 35, 88 ] ]
-                    }
-          },
-          "conf": {
-                    "graphType": "Bar"
-          }
-        });
-      });
-    &lt;/script&gt;
-  &lt;/head&gt;
-  
-  &lt;body&gt;
-    &lt;canvas id="canvasId" width="540" height="540"&gt;&lt;/canvas&gt;    
-  &lt;/body&gt;
-  
-&lt;/html&gt;
-              </code>
-            </pre>
-          </section>
-          <section>
-            <h3>Data is 'L' shaped</h3>
-            <img src="./images/data1.gif">
-            <p>Each container is a data frame (like in R)</p>            
-          </section>
-          <section>
-            <h3>One Series Data Set</h3>
-            <pre>
-              <code class="hljs json" style="margin:auto; width: 70%; line-height:24px; font-size:x-large; max-height:800px;">          
-{
-  "y": {
-    "vars": [ "Variable1" ],
-    "smps": [ "Sample1", "Sample2", "Sample3" ],
-    "data": [ [ 10, 20, 30 ] ]
-  },
-  "x": {
-    "Tissue": [ "Kidney", "Lung", "Heart" ],
-    "Donor":  [ "D1",     "D1",   "D2" ]
-  },
-  "z": {
-    "Symbol":  [ "AAA" ],
-    "Pathway": [ "P1" ]
-  }
-}
-              </code>
-            </pre>          
-          </section>                    
-          <section>
-            <h3>Two Series Data Set</h3>
-            <pre>
-              <code class="hljs json" style="margin:auto; width: 70%; line-height:24px; font-size:x-large; max-height:800px;">          
-{
-  "y": {
-    "vars": [ "Variable1", "Variable2" ],
-    "smps": [ "Sample1", "Sample2", "Sample3" ],
-    "data": [ [ 10, 20, 30 ],
-            [   35, 25, 15 ] ]
-  },
-  "x": {
-    "Tissue": [ "Kidney", "Lung", "Heart" ],
-    "Donor":  [ "D1",     "D1",   "D2" ]
-  },
-  "z": {
-    "Symbol":  [ "AAA", "BBB" ],
-    "Pathway": [ "P1",  "P2" ]
-  }
-}
-              </code>
-            </pre>          
-          </section>                    
-          <section>
-            <h3>Visualization</h3>
-            <div>
-              <h4>Different paradigm than other charting JS libraries</h4>
-              <h4>You may include data not needed in the initial plot... Why?</h4>
-              <div class="cx-canvas">
-                <canvas class="CanvasXpress" width=500 height=500 id="twoSeries" data-src="http://localhost:8001/data/twoSeries.json"></canvas>
-              </div>
-            </div>
-          </section>
-        </section>
-        <!-- R -->
-        <section data-transition="convex-in fade-out" data-state="dim-background4" data-background-image="./images/lines.png">
-          <h3><a href="https://github.com/neuhausi/canvasXpress">Github</a>: CanvasXpress for R</h3>
-          <div style="width:70%; margin:auto;">
-            <img src="./images/github.png">
-            <h3>Installation</h3>
-            <p align="left" style="font-size:x-large;">canvasXpress is available for installation from <a href="https://cran.r-project.org/web/packages/canvasXpress/index.html">CRAN</a> or you can install the latest version of canvasXpress from GitHub as follows:</p>
-            <pre>
-              <code class="hljs R" style="line-height:20px; font-size:large; max-height:800px;">
-devtools::install_github('neuhausi/canvasXpress')              
-              </code>
-            </pre>
-          </div>
-        </section>
-        <!-- R Examples -->
-        <section data-transition="convex-in fade-out" data-state="dim-background4" data-background-image="./images/lines.png">
-          <h3>R Examples and Resources</h3>
-          <pre>
-            <code class="hljs R" style="line-height:20px; font-size:large; max-height:800px;">
-#List all package vignettes
-vignette(package = "canvasXpress")
-
-#View a specific vignette
-vignette("getting_started", package = "canvasXpress")
-vignette("additional_examples", package = "canvasXpress")            
-            </code>
-          </pre>
-          <h3>Shiny</h3>
-          <pre>
-            <code class="hljs R" style="line-height:20px; font-size:large; max-height:800px;">
-#List example names
-cxShinyExample()
-
-#Run an interactive shiny example
-cxShinyExample(example = "example1")            
-            </code>
-          </pre>
-        </section>
-        <!-- R-Help -->        
-        <section data-transition="convex-in fade-out" data-state="dim-background4" data-background-image="./images/lines.png">
-          <h3>CanvasXpress in R</h3>
-          <div style="width:80%; margin:auto;">
-            <img width="1000" src="./images/r-help.png">
-          </div>
-        </section>
-        <!-- R-Help -->        
-        <section data-transition="convex-in fade-out" data-state="dim-background4" data-background-image="./images/lines.png">
-          <h3>CanvasXpress in R Console</h3>
-          <pre>
-            <code class="hljs R" style="line-height:20px; font-size:large; max-height:300px;">
-data <- t(iris[,1:4])
-varAnnot <- as.matrix(iris[,5])
-colnames(varAnnot) <- "Species"
-canvasXpress(t(data), varAnnot=varAnnot, scatterPlotMatrix=1, colorBy="Species")
-            </code>
-          </pre>
-          <div class="cx-canvas">
-            <canvas class="CanvasXpress" width=500 height=300 id="scatterPlotMatrix" data-src="http://localhost:8001/images/scatterPlotMatrix.png"></canvas>
-          </div>          
-        </section>
-        <!-- R-Studio -->        
-        <section data-transition="convex-in fade-out" data-state="dim-background4" data-background-image="./images/lines.png">
-          <h3>CanvasXpress in <a href="https://www.rstudio.com/">R-Studio</a></h3>
-          <div style="width:70%; margin:auto;">
-            <img src="./images/cx-rs.png">
-          </div>
-        </section>
-        <!-- Shiny -->
-        <section data-transition="convex-in fade-out" data-state="dim-background4" data-background-image="./images/lines.png">
-          <section data-transition="convex-in fade-out">
-            <h3>CanvasXpress in a <a href="https://shiny.rstudio.com/">Shiny</a> App</h3>
-            <div style="width:75%; margin:auto;">
-              <img src="./images/shiny.png">
-            </div>
-          </section>
-          <section data-transition="convex-in fade-out">
-            <h3>Some Shiny Code</h3>
-            <pre>
-              <code class="hljs R" style="line-height:12px; font-size:medium; max-height:800px;">
-library(shiny)
-library(htmlwidgets)
-library(canvasXpress)
-
-shinyServer(function(input, output, session) {
-      
-      # Combine the selected variables into a new data frame
-      selectedData = reactive({
-            iris[, c(input$xAxis, input$yAxis)]
-          })
-      
-      output$plot = renderCanvasXpress({
-            smpAnnot = as.matrix(iris[,5])
-            colnames(smpAnnot) = "Species"
-            canvasXpress(selectedData(), graphType="Scatter2D", width=500, height=500, title="Iris Data")
-          })
-      
-    })
-              </code>
-            </pre>
-            <pre>
-              <code class="hljs R" style="line-height:12px; font-size:medium; max-height:800px;">
-library(shiny)
-library(htmlwidgets)
-library(canvasXpress)
-
-shinyUI(pageWithSidebar(
-        headerPanel("Scatter Plot"),
-        sidebarPanel(
-            selectInput("xAxis", "X Axis", names(iris)[1:4]),
-            selectInput("yAxis", "Y Axis", names(iris)[1:4], selected=names(iris)[[2]])
-        ),
-        mainPanel(
-            canvasXpressOutput("plot")
-        )
-    ))            
-              </code>
-            </pre>          
-          </section>
-        </section>
-        <!-- Flex Dashboard -->
-        <section data-transition="convex-in fade-out" data-state="dim-background4" data-background-image="./images/lines.png">
-          <section data-menu-title="FlexDashboard" data-transition="convex-in fade-out">
-            <h3>CanvasXpress in <a href="https://report.pri.bms.com/examples/cx_flexdashboard/#section-dashboard">FlexDashboard</a></h3>
-            <div style="width:60%; margin:auto;">
-              <img src="./images/dashboard.png">
-            </div>
-          </section>
-          <section data-menu-title="FlexDashboard Code">
-            <p>Some Markup Code</p>
-            <pre>
-              <code class="hljs" style="line-height:10px; font-size:x-small; max-height:800px;">
----
-title: "IPF Fibroblast data"
-output:
-  flexdashboard::flex_dashboard:
-    orientation: rows
-    social: menu
-    source_code: embed
-    css: styles.css
-  runtime: shiny
----            
-            
-```{r setup, include=FALSE}
-library(knitr)
-library(flexdashboard)
-library(htmlwidgets)
-library(canvasXpress)
-library(dplyr)
-
-source("supporting_plots.R")
-
-loadData = function(filename) {
-    exData = readRDS(filename)
-
-    # format gene names: remove first underscore and all characters after that
-    gsub_expression = "_.*"
-    rownames(exData$Log2CPM) = gsub(gsub_expression, "", rownames(exData$Log2CPM))
-    exData$contrasts = lapply(exData$contrasts, FUN = function(x) {
-        rownames(x) = gsub(gsub_expression, "", rownames(x))
-        return(x)
-    })
-    exData
-}
-
-# load and prep the data
-exData    = loadData("data.rds")
-gene_list = rownames(exData$contrasts[[1]])
-```
-
-Sidebar {.sidebar}
-======================================================================
-
-```{r}
-selectizeInput("contrast", "Select Contrast", names(exData$contrasts))
-
-selectizeInput("genes", "Select Gene(s)", gene_list, multiple = TRUE, selected = gene_list[1:2], 
-               options  = list(placeholder = "Type/Click then Select", 
-                               searchField = "value", 
-                               plugins = list('remove_button')))
-ds1 = reactive({
-    exData$contrasts[[input$contrast]]
-})
-```
-              </code>
-            </pre>
-          </section>
-          <section data-menu-title="FlexDashboard Code 2">
-            <p>the rest of the Markup Code</p>
-            <pre>
-              <code class="hljs" style="line-height:10px; font-size:x-small; max-height:800px;">
-Dashboard
-======================================================================
-
-Row {data-height=500}
-----------------------------------------------------------------------
-
-### Profile plot
-
-renderCanvasXpress({
-     pp = ds1()
-     if (!is.null(pp)) {
-        profilePlot(pp, title = paste(input$contrast, sep = ""))
-     }  else {
-        canvasXpress(destroy = TRUE)
-    }
-})
-```
-
-### Volcano plot
-
-```{r}
-renderCanvasXpress({
-    vp = ds1()
-    if (!is.null(vp)) {
-        volcanoPlot(vp, title = paste(input$contrast, sep = ""))
-     }  else {
-        canvasXpress(destroy = TRUE)
-    }
-  })
-```  
-
-Row {data-height=500}
-----------------------------------------------------------------------
-
-### Explore genes
-  
-```{r}  
-renderCanvasXpress({
-    sel = input$genes
-    if (!is.null(sel)) {
-      dat = exData$Log2CPM
-      dat = dat[rownames(dat) %in% sel,,drop = FALSE]
-      des = exData$smpAnnot$ReplicateGroup
-      genePlot(dat, des, title = "Expression Plot")
-    } else {
-        canvasXpress(destroy = TRUE)
-    }
-})
-```  
-              </code>
-            </pre>
-          </section>
-        </section>
+        
+        
+        
+        <!-- Web Tutorial -->
+        <section data-external-replace="modules/webTutorial.html"></section>
+        <!-- R Tutorial -->
+        <section data-external-replace="modules/RTutorial.html"></section>
+        <!-- R-Studio Tutorial -->
+        <section data-external-replace="modules/RStudioTutorial.html"></section>
+        <!-- FlexDashboard Tutorial -->
+        <section data-external-replace="modules/FlexDashboardTutorial.html"></section>
+        
+        
+        
         <!-- General -->
         <section data-transition="convex-in fade-out">
           <h2>CanvasXpress</h2>
@@ -556,12 +225,13 @@ renderCanvasXpress({
           { src: 'plugin/notes/notes.js', async: true },
           { src: 'plugin/menu/menu.js' },
           { src: 'plugin/toolbar/toolbar.js' },
+          { src: 'plugin/external/external.js', condition: function() { return !!document.querySelector( '[data-external],[data-external-replace]' ); } }, 
           { src: 'plugin/canvasXpress/canvasXpress.js' }
         ]
       });
 
       Reveal.addEventListener( 'slidechanged', function( event ) {
-      	var animations = ["outer", "spin"];
+      	var animations = ["outer", "spin", "typewriter"];
       	if (event.currentSlide && event.currentSlide.classList) {
       	  for (var i = 0; i < animations.length; i++) {
       	  	var anm = animations[i];
@@ -578,9 +248,6 @@ renderCanvasXpress({
       });
       
     </script>
-
-    <!-- D3 -->
-    <script type="text/javascript" src="./d3/example.js"></script>
     
   </body>
   

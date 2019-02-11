@@ -1,0 +1,123 @@
+<section data-transition="convex-in fade-out" data-state="dim-background4" data-background-image="./images/lines.png">
+  <section data-menu-title="FlexDashboard" data-transition="convex-in fade-out">
+    <h3>CanvasXpress in <a href="https://report.pri.bms.com/examples/cx_flexdashboard/#section-dashboard">FlexDashboard</a></h3>
+    <div style="width:60%; margin:auto;">
+      <img src="./images/dashboard.png">
+    </div>
+  </section>
+  <section data-menu-title="FlexDashboard Code">
+    <p>Some Markup Code</p>
+    <pre>
+      <code class="hljs" style="line-height:10px; font-size:x-small; max-height:800px;">
+---
+title: "IPF Fibroblast data"
+output:
+  flexdashboard::flex_dashboard:
+    orientation: rows
+    social: menu
+    source_code: embed
+    css: styles.css
+  runtime: shiny
+---            
+            
+```{r setup, include=FALSE}
+library(knitr)
+library(flexdashboard)
+library(htmlwidgets)
+library(canvasXpress)
+library(dplyr)
+
+source("supporting_plots.R")
+
+loadData = function(filename) {
+    exData = readRDS(filename)
+
+    # format gene names: remove first underscore and all characters after that
+    gsub_expression = "_.*"
+    rownames(exData$Log2CPM) = gsub(gsub_expression, "", rownames(exData$Log2CPM))
+    exData$contrasts = lapply(exData$contrasts, FUN = function(x) {
+        rownames(x) = gsub(gsub_expression, "", rownames(x))
+        return(x)
+    })
+    exData
+}
+
+# load and prep the data
+exData    = loadData("data.rds")
+gene_list = rownames(exData$contrasts[[1]])
+```
+
+Sidebar {.sidebar}
+======================================================================
+
+```{r}
+selectizeInput("contrast", "Select Contrast", names(exData$contrasts))
+
+selectizeInput("genes", "Select Gene(s)", gene_list, multiple = TRUE, selected = gene_list[1:2], 
+               options  = list(placeholder = "Type/Click then Select", 
+                               searchField = "value", 
+                               plugins = list('remove_button')))
+ds1 = reactive({
+    exData$contrasts[[input$contrast]]
+})
+```
+      </code>
+    </pre>
+  </section>
+  <section data-menu-title="FlexDashboard Code 2">
+    <p>the rest of the Markup Code</p>
+    <pre>
+      <code class="hljs" style="line-height:10px; font-size:x-small; max-height:800px;">
+Dashboard
+======================================================================
+
+Row {data-height=500}
+----------------------------------------------------------------------
+
+### Profile plot
+
+renderCanvasXpress({
+     pp = ds1()
+     if (!is.null(pp)) {
+        profilePlot(pp, title = paste(input$contrast, sep = ""))
+     }  else {
+        canvasXpress(destroy = TRUE)
+    }
+})
+```
+
+### Volcano plot
+
+```{r}
+renderCanvasXpress({
+    vp = ds1()
+    if (!is.null(vp)) {
+        volcanoPlot(vp, title = paste(input$contrast, sep = ""))
+     }  else {
+        canvasXpress(destroy = TRUE)
+    }
+  })
+```  
+
+Row {data-height=500}
+----------------------------------------------------------------------
+
+### Explore genes
+  
+```{r}  
+renderCanvasXpress({
+    sel = input$genes
+    if (!is.null(sel)) {
+      dat = exData$Log2CPM
+      dat = dat[rownames(dat) %in% sel,,drop = FALSE]
+      des = exData$smpAnnot$ReplicateGroup
+      genePlot(dat, des, title = "Expression Plot")
+    } else {
+        canvasXpress(destroy = TRUE)
+    }
+})
+```  
+      </code>
+    </pre>
+  </section>
+</section>

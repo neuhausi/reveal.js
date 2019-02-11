@@ -1,0 +1,99 @@
+<section data-transition="convex-in fade-out" data-state="dim-background4" data-background-image="./images/lines.png">
+  <section>
+    <h3>Usage in the Web</h3>
+    <pre>
+      <code class="hljs html" style="line-height:16px; font-size:medium; max-height:800px;">
+&lt;html&gt;
+
+  &lt;head&gt;  
+    &lt;link rel="stylesheet" href="path-to-canvasXpress.css" type="text/css"/&gt;
+    &lt;script type="text/javascript" src="path-to-canvasXpress.min.js"&gt;&lt;/script&gt;
+    &lt;script&gt;
+      onReady(function () { 
+        var cX = new CanvasXpress({
+          "renderTo": "canvasId", 
+          "data": {
+                    "y": {
+                       "vars": [ "Gene1"],
+                       "smps": [ "Smp1", "Smp2", "Smp3" ],
+                       "data": [ [ 10, 35, 88 ] ]
+                    }
+          },
+          "config": {
+                    "graphType": "Bar"
+          }
+        });
+      });
+    &lt;/script&gt;
+  &lt;/head&gt;
+  
+  &lt;body&gt;
+    &lt;canvas id="canvasId" width="540" height="540"&gt;&lt;/canvas&gt;    
+  &lt;/body&gt;
+  
+&lt;/html&gt;
+      </code>
+    </pre>
+    <img style="position:relative; left:300px; top:-300px; width:200px;" src="./images/cX-oneSeries-1.png">            
+  </section>
+  <section>
+    <h3>Data is 'L' shaped</h3>
+    <img src="./images/data1.gif">
+    <p>Each container is a data frame (like in R)</p>            
+  </section>
+  <section>
+    <h3>One Series Data Set</h3>
+    <pre>
+      <code class="hljs json" style="margin:auto; width: 70%; line-height:24px; font-size:x-large; max-height:800px;">          
+{
+  "y": {
+    "vars": [ "Variable1" ],
+    "smps": [ "Sample1", "Sample2", "Sample3" ],
+    "data": [ [ 10, 20, 30 ] ]
+  },
+  "x": {
+    "Tissue": [ "Kidney", "Lung", "Heart" ],
+    "Donor":  [ "D1",     "D1",   "D2" ]
+  },
+  "z": {
+    "Symbol":  [ "AAA" ],
+    "Pathway": [ "P1" ]
+  }
+}
+      </code>
+    </pre>          
+  </section>                    
+  <section>
+    <h3>Two Series Data Set</h3>
+    <pre>
+      <code class="hljs json" style="margin:auto; width: 70%; line-height:24px; font-size:x-large; max-height:800px;">          
+{
+  "y": {
+    "vars": [ "Variable1", "Variable2" ],
+    "smps": [ "Sample1", "Sample2", "Sample3" ],
+    "data": [ [ 10, 20, 30 ],
+            [   35, 25, 15 ] ]
+  },
+  "x": {
+    "Tissue": [ "Kidney", "Lung", "Heart" ],
+    "Donor":  [ "D1",     "D1",   "D2" ]
+  },
+  "z": {
+    "Symbol":  [ "AAA", "BBB" ],
+    "Pathway": [ "P1",  "P2" ]
+  }
+}
+      </code>
+    </pre>          
+  </section>                    
+  <section>
+    <h3>Visualization</h3>
+    <div style="font-size:smaller;">
+      <p align="left">May use different paradigm than other charting JS libraries</p>
+      <p align="left">You may include data not needed in the initial plot... Why?</p>
+    </div>
+    <div style="position:relative; top:-100px;" class="cx-canvas">
+      <canvas class="CanvasXpress" width=500 height=500 id="twoSeries" data-src="http://localhost:8001/data/twoSeries.json"></canvas>
+    </div>
+  </section>
+</section>

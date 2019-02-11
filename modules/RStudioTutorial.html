@@ -1,0 +1,57 @@
+<section data-transition="convex-in fade-out" data-state="dim-background4" data-background-image="./images/lines.png">       
+  <section>
+    <h3>CanvasXpress in <a href="https://www.rstudio.com/">R-Studio</a></h3>
+    <div style="width:70%; margin:auto;">
+      <img src="./images/cx-rs.png">
+    </div>
+  </section>
+  <section data-transition="convex-in fade-out">
+    <h3>CanvasXpress in a <a href="https://shiny.rstudio.com/">Shiny</a> App</h3>
+    <div style="width:75%; margin:auto;">
+      <img src="./images/shiny.png">
+    </div>
+  </section>
+  <section data-transition="convex-in fade-out">
+    <h3>Some Shiny Code</h3>
+    <pre>
+      <code class="hljs R" style="line-height:12px; font-size:medium; max-height:800px;">
+library(shiny)
+library(htmlwidgets)
+library(canvasXpress)
+
+shinyServer(function(input, output, session) {
+      
+      # Combine the selected variables into a new data frame
+      selectedData = reactive({
+            iris[, c(input$xAxis, input$yAxis)]
+          })
+      
+      output$plot = renderCanvasXpress({
+            smpAnnot = as.matrix(iris[,5])
+            colnames(smpAnnot) = "Species"
+            canvasXpress(selectedData(), graphType="Scatter2D", width=500, height=500, title="Iris Data")
+          })
+      
+    })
+      </code>
+    </pre>
+    <pre>
+      <code class="hljs R" style="line-height:12px; font-size:medium; max-height:800px;">
+library(shiny)
+library(htmlwidgets)
+library(canvasXpress)
+
+shinyUI(pageWithSidebar(
+        headerPanel("Scatter Plot"),
+        sidebarPanel(
+            selectInput("xAxis", "X Axis", names(iris)[1:4]),
+            selectInput("yAxis", "Y Axis", names(iris)[1:4], selected=names(iris)[[2]])
+        ),
+        mainPanel(
+            canvasXpressOutput("plot")
+        )
+    ))            
+      </code>
+    </pre>          
+  </section>
+</section>
