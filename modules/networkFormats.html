@@ -1,0 +1,112 @@
+<section data-transition="convex-in fade-out" data-state="dim-background2" data-background-image="./images/retro.png">
+  <section>
+    <h3>Data Format for Networks</h3>
+    <ul style="padding-top:50px;">
+      <li>Native - JSON object</li>
+      <li>GML - <a href="https://en.wikipedia.org/wiki/Graph_Modelling_Language">Graph Modelling Language</a></li>
+      <li>XML
+        <ul>
+          <li>GPML - <a href="https://www.wikipathways.org/index.php/WikiPathways">Wikipathways</a></li>
+          <li>KGML - <a href="https://www.kegg.jp/">Kegg</a></li> 
+          <li>XGML
+            <ul>
+              <li><a href="https://cytoscape.org/">Cytoscape</a></li>
+              <li><a href="https://clarivate.com/products/metacore/">Metabase</a></li>                
+            </ul>
+          </li> 
+        </ul>
+      </li>
+    </ul>
+  </section>
+  <section data-transition="convex-in fade-out">
+    <h3>Native JSON Format</h3>
+    <pre>
+      <code class="hljs javascript" style="line-height:10px; font-size:x-small; max-height:800px;">
+var cX = new CanvasXpress("canvasId", {
+      nodes: [
+        {
+          id: "Node1",
+          color: "rgb(255,0,0)",
+          shape: "circle",
+          size: 1
+        }, {
+          id: "Node2",
+          color: "rgb(0,255,0)",
+          shape: "square",
+          size: 1.5
+        }, {
+          id: "Node3",
+          color: "rgb(0,0,255)",
+          shape: "triangle",
+          size: 2
+        }
+      ],
+      edges: [
+        {
+          id1: "Node1",
+          id2: "Node2",
+          color: "rgb(125,125,0)"
+        }, {
+          id1: "Node1",
+          id2: "Node3",
+          color: "rgb(0,125,125)"
+        }, {
+          id1: "Node2",
+          id2: "Node3",
+          color: "rgb(125,0,125)"
+        }
+      ]
+    }, {
+      graphType: "Network"
+    }
+);                   
+      </code>
+    </pre>
+    <p>Parameters: (1) DOM id, (2) data, (3) config</p>
+  </section>
+  <section data-transition="convex-in fade-out">
+    <h3>Native JSON Format turns into a dataframe in R</h3>
+    <pre>
+      <code class="hljs R" style="line-height:20px; font-size:small; max-height:800px;">
+library(canvasXpress)
+nodes = "http://www.canvasxpress.org/data/cX-lesmiserable-nodes.txt"
+edges = "http://www.canvasxpress.org/data/cX-lesmiserable-edges.txt"
+canvasXpress(
+  nodeData = read.table(nodes, header=TRUE, sep="\t", quote="", fill=TRUE, check.names=FALSE, stringsAsFactors=FALSE),
+  edgeData = read.table(edges, header=TRUE, sep="\t", quote="", fill=TRUE, check.names=FALSE, stringsAsFactors=FALSE),
+  colorNodeBy = "group",
+  colorSpectrum = list("purple", "blue", "cyan", "green", "yellow", "orange", "red"),
+  edgeWidth = 2,
+  graphType = "Network",
+  nodeFontColor = "rgb(29,34,43)",
+  nodeSize = 30,
+  showAnimation = TRUE,
+  title = "Les Miserable"
+)
+      </code>
+    </pre>
+  </section>
+  <section data-transition="convex-in fade-out">
+    <h3>XML is loaded from a URL</h3>
+    <p>In JS...</p>
+    <pre>
+      <code class="hljs javascript" style="width:50%; margin:auto; line-height:16px; font-size:large; max-height:800px;">
+var cX = new CanvasXpress("canvasId",
+    "https://path/to/file/hsa05222.xml", {
+      graphType: "Network"
+    }
+);
+      </code>
+    </pre>          
+    <p>In R...</p>                    
+    <pre>
+      <code class="hljs R" style="width:50%; margin:auto; line-height:16px; font-size:large; max-height:800px;">
+library(canvasXpress)
+canvasXpress(
+  data = "http://path/to/file/hsa05222.xml",
+  graphType = "Network"
+)                        
+      </code>
+    </pre>          
+  </section>  
+</section>

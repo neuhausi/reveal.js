@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="lib/css/zenburn.css">
 
     <!-- Css for this presentation -->
-    <link rel="stylesheet" href="./bioit2019.css">
+    <link rel="stylesheet" href="./modules/modules.css">
 
     <!-- Printing and PDF exports -->
     <script>
@@ -27,72 +27,6 @@
       document.getElementsByTagName( 'head' )[0].appendChild( link );
     </script>
     
-    <style>
-      html.dim-background2 .slide-background {
-        opacity: 0.2 !important;
-      }
-      html.dim-background4 .slide-background {
-        opacity: 0.4 !important;
-      }
-      div.cx-canvas {
-
-      } 
-      div.cx-data img.CanvasXpress-transparent {
-        margin: 0px; 
-        border: 0px;
-        background: rgba(0,0,0,0);
-        box-shadow: 0 0 10px rgba(0,0,0,0);
-        opacity: 0;
-      }
-      div.cx-data img.CanvasXpress {
-        border: 0px;
-        background: rgba(0,0,0,0);
-        box-shadow: 0 0 10px rgba(0,0,0,0);
-        -webkit-transition: opacity 1s ease-in-out;
-        -moz-transition: opacity 1s ease-in-out;
-        -o-transition: opacity 1s ease-in-out;
-        transition: opacity 1s ease-in-out;
-      }
-      div.cx-data img.cx-data {
-        border: 0px;
-        background: rgba(0,0,0,0);
-        box-shadow: 0 0 10px rgba(0,0,0,0);
-        -webkit-transition: opacity 1s ease-in-out;
-        -moz-transition: opacity 1s ease-in-out;
-        -o-transition: opacity 1s ease-in-out;
-        transition: opacity 1s ease-in-out;
-      }
-      div.cx-destroy img.CanvasXpress {
-        border: 0px;
-        background: rgba(0,0,0,0);
-        box-shadow: 0 0 10px rgba(0,0,0,0);
-      }
-      div.cx-data {
-        position: absolute;
-        width: 100%; 
-      }
-      div.cx-destroy {
-        position: absolute;
-      }
-      div.cx-block {
-        position: relative; 
-      }
-      .side-by-side {
-        display: -webkit-flex;
-        display: -moz-flex;
-        display: flex;
-        box-sizing: border-box;
-      }
-      .side-by-side .side + .side {
-         margin-left: 2rem;
-      }      
-      .side-by-side .side {
-        -webkit-flex: 1 0 0;
-        -moz-flex: 1 0 0;
-        flex: 1 0 0;
-      }
-    </style>
-
     <!-- CanvasXpress --> 
     <!-- Must be specified last to avoid conflicts with CSS --> 
     <link rel="stylesheet" href="https://canvasxpress.org/css/canvasXpress.css" type="text/css">
@@ -110,50 +44,9 @@
           <p><a href="mailto:imnphd@gmail.com">Bristol Myers Squibb - Isaac Neuhaus</a></p>
         </section>
         <!-- Other Libraries -->
-        <section data-transition="convex-in fade-out" data-state="dim-background2" data-background-image="./images/retro.png" data-menu-title="Charting Libraries">
-          <div class="collage">
-            <img class="spin" src="./images/zingchart_logo.png">
-            <img class="spin" src="./images/Highcharts.png">
-            <img class="spin" src="./images/Google-Charts.jpg">
-            <img class="spin" src="./images/FusionCharts.jpeg">
-            <img class="spin" src="./images/dygraphs.png">
-            <img class="spin" src="./images/d3.png">
-            <img class="spin" src="./images/canvasxpress.png">
-            <img class="spin" src="./images/chartjs.jpg">
-            <img class="spin" src="./images/chartist-js.jpg"> 
-            <img class="spin" src="./images/canvasjs-charts.png">
-            <img class="spin" src="./images/sigmajs.jpg">
-            <img class="spin" src="./images/cytoscapejs.png">
-            <img class="spin" src="./images/plotly.png">
-            <img class="spin" src="./images/flot.jpg">
-            <img class="spin" src="./images/anychart.png">
-            <img class="spin" src="./images/amcharts.png">
-            <img class="spin" src="./images/raphaeljs.png">
-          </div>
-        </section>
+        <section data-external-replace="modules/chartingLibraries.html"></section>
         <!-- Motivation -->
-        <section data-transition="convex-in fade-out" data-state="dim-background2" data-background-image="./images/retro.png">
-          <section data-transition="convex-in fade-out" data-menu-title="Motivation">
-            <div class="circle-container">
-              <img class="outer key" src="./images/key.png">
-              <div class="outer circle circle72"><span>Scalable</span></div>
-              <div class="outer circle circle144"><span>Table</span></div>
-              <div class="outer circle circle216"><span>Filter</span></div>
-              <div class="outer circle circle288"><span>Auditable</span></div>
-              <div class="outer circle circle360"><span>Custom</span></div>
-            </div>
-            <aside class="notes">
-              Why did I want?
-              Turn key system with many bell and whistles.
-            </aside>
-          </section>
-          <section data-transition="convex-in fade-out">
-           <h2>SVG vs CANVAS</h2>
-           <div>
-             <img class="spin" src="./images/canvas-svg.png">
-           </div>
-          </section>          
-        </section>
+        <section data-external-replace="modules/motivation.html"></section>
         <!-- Outline -->
         <section data-transition="convex-in fade-out" data-state="dim-background2" data-background-image="./images/retro.png">
           <h2>Features</h2>
@@ -163,9 +56,6 @@
           <p align="left">Rich user interfaces to customize visualization</p>
           <p align="left">Built with Reproducible Research in mind</p>
         </section>
-        
-        
-        
         <!-- Web Tutorial -->
         <section data-external-replace="modules/webTutorial.html"></section>
         <!-- R Tutorial -->
@@ -174,6 +64,10 @@
         <section data-external-replace="modules/RStudioTutorial.html"></section>
         <!-- FlexDashboard Tutorial -->
         <section data-external-replace="modules/FlexDashboardTutorial.html"></section>
+        <!-- Formats -->
+        <section data-external-replace="modules/formats.html"></section>
+        <!-- Network Formats -->
+        <section data-external-replace="modules/networkFormats.html"></section>
         
         
         

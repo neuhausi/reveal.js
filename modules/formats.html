@@ -1,0 +1,111 @@
+<section data-transition="convex-in fade-out" data-state="dim-background2" data-background-image="./images/retro.png">
+  <section>
+    <h3>Supported Data Formats</h3>
+    <ul style="padding-top:50px;">
+      <li>Native - JSON object
+        <ul>
+          <li>X,Y,Z graphs</li>
+          <li>Networks</li>
+          <li>Genome Browser</li>
+          <li>Venn Diagrams</li>
+        </ul>
+      </li>
+      <li>Delimited text files</li>
+      <li>XML</li>
+      <li>CanvasXpress - PNG files</li>
+    </ul>
+  </section>
+  <section data-transition="convex-in fade-out">
+    <h3>Native JSON Format</h3>
+    <pre>
+      <code class="hljs javascript" style="line-height:20px; font-size:large; max-height:800px;">
+var data = {
+  "y": {
+    "vars": [ "Gene1"],
+    "smps": [ "Smp1", "Smp2", "Smp3" ],
+    "data": [ [ 10, 35, 88 ] ]
+  }
+};
+
+var conf = {
+  "graphType": "Bar"
+}
+
+var cX = new CanvasXpress("canvasId", data, conf);
+      </code>
+    </pre>
+    <p>Parameters: (1) DOM id, (2) data, (3) config</p>
+  </section>
+  <section data-transition="convex-in fade-out">
+    <h3>Alternate JSON Format</h3>
+    <pre>
+      <code class="hljs javascript" style="line-height:20px; font-size:large; max-height:800px;">
+var cX = new CanvasXpress("canvasId", {
+    "y": {
+      "vars": [ "Variable1", "Variable2" ],
+      "smps": [ "Sample1", "Sample2", "Sample3" ],
+      "data": [ [ 10, 20, 30 ],
+              [   35, 25, 15 ] ]
+    },
+    "x": {
+      "Tissue": [ "Kidney", "Lung", "Heart" ],
+      "Donor":  [ "D1",     "D1",   "D2" ]
+    },
+    "z": {
+      "Symbol":  [ "AAA", "BBB" ],
+      "Pathway": [ "P1",  "P2" ]
+    }
+  }, {
+    "graphType": "Bar"
+  }
+);
+      </code>
+    </pre>
+    <p>Parameters: (1) DOM id, (2) data, (3) config</p>
+  </section>
+  <section data-transition="convex-in fade-out">
+    <h3>Native JSON Format turns into a dataframe in R</h3>
+    <pre>
+      <code class="hljs R" style="line-height:20px; font-size:small; max-height:800px;">
+library(canvasXpress)
+nodes = "http://www.canvasxpress.org/data/cX-lesmiserable-nodes.txt"
+edges = "http://www.canvasxpress.org/data/cX-lesmiserable-edges.txt"
+canvasXpress(
+  nodeData = read.table(nodes, header=TRUE, sep="\t", quote="", fill=TRUE, check.names=FALSE, stringsAsFactors=FALSE),
+  edgeData = read.table(edges, header=TRUE, sep="\t", quote="", fill=TRUE, check.names=FALSE, stringsAsFactors=FALSE),
+  colorNodeBy = "group",
+  colorSpectrum = list("purple", "blue", "cyan", "green", "yellow", "orange", "red"),
+  edgeWidth = 2,
+  graphType = "Network",
+  nodeFontColor = "rgb(29,34,43)",
+  nodeSize = 30,
+  showAnimation = TRUE,
+  title = "Les Miserable"
+)
+      </code>
+    </pre>
+  </section>
+  <section data-transition="convex-in fade-out">
+    <h3>XML is loaded from a URL</h3>
+    <p>In JS...</p>
+    <pre>
+      <code class="hljs javascript" style="width:50%; margin:auto; line-height:16px; font-size:large; max-height:800px;">
+var cX = new CanvasXpress("canvasId",
+    "https://path/to/file/hsa05222.xml", {
+      graphType: "Network"
+    }
+);
+      </code>
+    </pre>          
+    <p>In R...</p>                    
+    <pre>
+      <code class="hljs R" style="width:50%; margin:auto; line-height:16px; font-size:large; max-height:800px;">
+library(canvasXpress)
+canvasXpress(
+  data = "http://path/to/file/hsa05222.xml",
+  graphType = "Network"
+)                        
+      </code>
+    </pre>          
+  </section>  
+</section>
