@@ -1,0 +1,33 @@
+<section data-transition="convex-in fade-out" data-state="dim-background4" data-background-image="./images/lines.png">       
+  <section data-transition="convex-in fade-out">
+    <h2>Loading data from files</h2>
+    <p align="left">CSV or Tab delimited files</p>
+    <p align="left">Remote JSON files</p>
+    <p align="left">CanvasXpress PNG files</p>
+  </section>
+  <section data-transition="convex-in fade-out">
+    <h3>CSV <a href="https://raw.githubusercontent.com/neuhausi/Rdatasets/master/csv/datasets/ToothGrowth.csv">file</a></h3>
+    <pre>
+      <code class="hljs javascript" style="line-height:18px; font-size:medium; max-height:800px;">
+var cX = new CanvasXpress(
+  {
+   renderTo: "canvasId",
+   data: "https://raw.githubusercontent.com/neuhausi/Rdatasets/master/csv/datasets/ToothGrowth.csv",
+   config: {
+     title: "Tooth Growth",
+     smpLabelRotate: 90,
+     graphType: "Boxplot",
+     graphOrientation: "vertical",
+     transposeData: true,
+     asVariableFactors: [ "dose" ],
+     stringSampleFactors: [ "dose" ],
+     groupingFactors: [ "dose" ]
+   },
+   events: false
+  }
+);
+      </code>
+    </pre>   
+    <img style="position:relative; left:300px; top:-300px; width:200px;" src="./images/cX-canvasCSV.png">            
+  </section>
+</section>
