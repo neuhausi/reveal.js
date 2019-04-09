@@ -6,7 +6,7 @@
     <p align="left">CanvasXpress PNG files</p>
   </section>
   <section data-transition="convex-in fade-out">
-    <h3>CSV <a href="https://raw.githubusercontent.com/neuhausi/Rdatasets/master/csv/datasets/ToothGrowth.csv">file</a></h3>
+    <h3><a href="https://raw.githubusercontent.com/neuhausi/Rdatasets/master/csv/datasets/ToothGrowth.csv">CSV file</a></h3>
     <pre>
       <code class="hljs javascript" style="line-height:18px; font-size:medium; max-height:800px;">
 var cX = new CanvasXpress(
@@ -28,8 +28,42 @@ var cX = new CanvasXpress(
 );
       </code>
     </pre> 
-    <img style="position:relative; left:300px; top:-310px; width:220px;" src="./images/cX-canvasCSV.png">            
+    <a href="https://canvasxpress.org/html/documentation.html#data"><img style="position:relative; left:300px; top:-310px; width:220px;" src="./images/cX-canvasCSV.png"></a>            
   </section>
-  
-  
+  <section data-transition="convex-in fade-out">
+    <h3><a href="https://canvasxpress.org/images/ex/Ex-bar-6.png">PNG file</a></h3>
+    <pre>
+      <code class="hljs javascript" style="line-height:30px; font-size:large; max-height:800px;">
+var cX = new CanvasXpress(
+  {
+   renderTo: "canvasId",
+   data: "https://canvasxpress.org/images/ex/Ex-bar-6.png",
+   config: false,
+   events: false
+  }
+);      
+      </code>
+    </pre> 
+    <a href="https://canvasxpress.org/html/documentation.html#data"><img style="position:relative; left:300px; top:-310px; width:220px;" src="./images/cX-canvasPNG.png"></a>            
+  </section>
+  <section data-transition="convex-in fade-out">
+    <h3><a href="https://raw.githubusercontent.com/neuhausi/Rdatasets/master/json/datasets/AirPassengers.json">JSON file</a></h3>
+    <pre>
+      <code class="hljs javascript" style="line-height:30px; font-size:medium; max-height:800px;">
+var cX = new CanvasXpress(
+  {
+   renderTo: "canvasId",
+   data: "https://raw.githubusercontent.com/neuhausi/Rdatasets/master/json/datasets/AirPassengers.json",
+   config: false,
+   events: false
+  }
+);
+
+
+
+
+      </code>
+    </pre> 
+    <a href="https://canvasxpress.org/html/documentation.html#data"><img style="position:relative; left:300px; top:-310px; width:220px;" src="./images/cX-canvasJSON.png"></a>            
+  </section>  
 </section>
