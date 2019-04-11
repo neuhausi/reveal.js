@@ -188,7 +188,6 @@ div.cx-block {
 
 /* Collage */
 .collage {
-	line-height: 0;
 	-webkit-column-count: 5;
 	-webkit-column-gap: 0px;
 	-moz-column-count: 5;
