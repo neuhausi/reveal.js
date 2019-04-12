@@ -80,10 +80,13 @@
         <section data-external-replace="modules/ReproducibleResearch.html"></section>
         <!-- General -->
         <section data-transition="convex-in fade-out">
-          <h2>CanvasXpress</h2>
-          <div class="cx-canvas">
-            <canvas class="CanvasXpress" width=500 height=500 id="forcedirected" data-src="https://www.canvasxpress.org/images/ex/Ex-bar-1.png"></canvas>
-          </div>
+          <h2>Acknowledgements</h2>
+          <p style="font-size: xx-large">Connie Brett: Co-developer and Maintainer of the R package</p>
+        </section>
+        <!-- General -->
+        <section data-transition="convex-in fade-out">
+          <h1>Thank you!</h1>
+          <p><a href="mailto:imnphd@gmail.com">Bristol Myers Squibb - Isaac Neuhaus</a></p>
         </section>
       </div>
     </div>
@@ -111,11 +114,7 @@
         keyboard: {
           27 : null // Needed by canvasXpres to reset the graph
         },
-        
-        toolbar: {
-          notes: true
-        },
-        
+                
         dependencies: [
           { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
           { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
@@ -123,7 +122,6 @@
           { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
           { src: 'plugin/search/search.js', async: true },
           { src: 'plugin/zoom-js/zoom.js', async: true },
-          { src: 'plugin/notes/notes.js', async: true },
           { src: 'plugin/menu/menu.js' },
           { src: 'plugin/toolbar/toolbar.js' },
           { src: 'plugin/external/external.js', condition: function() { return !!document.querySelector( '[data-external],[data-external-replace]' ); } }, 
