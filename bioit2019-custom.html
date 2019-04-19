@@ -94,14 +94,26 @@
 
     <!-- Page Script -->
     <script type="text/javascript" src="./js/bioit2019-custom.js"></script>
-    
+        
   </head>
   
   <body style="background-color: #add9e4; background: -webkit-radial-gradient(center, circle cover, #f7fbfc 0%, #add9e4 100%);">
 
     <section style="background-image: url('./images/vL5c6W.png'); height: 100%;"> 
-      <div class="side-by-side" style="font-size: x-large;">
-        <div class="side">
+      <div style="font-size: x-large;">
+        <div class="side" style="width: 20%; float: left">
+          <p><b>User Interfaces</b></p>
+          <p>Toolbar</p>
+          <p>Data Table</p>
+          <p>Context Menus</p>
+          <p>Data Filter</p>
+          <p>Data Explorer</p>
+          <p>Configuration Widget</p>
+          <br>
+          <br>
+          <p><b><a href="#" onclick="reset(); return false;">Reset Graph</a></b></p>
+        </div>
+        <div style="width: 50%; float: left;">
           <canvas id="canvas" width="800" height="800"></canvas>
         </div>        
         <!--
@@ -112,13 +124,13 @@
           <canvas id="canvasr" width="600" height="600"></canvas>
         </div>
         -->
-        <div class="side">
+        <div style="width: 25%; float: left;">
           <p><b>Data Wrangling</b></p>
-          <p>Cluster</p>
+          <p><a href="#" onclick="cluster(); return false;">Cluster</a></p>
           <p>Sort</p>
-          <p>Group</p>
-          <p>Segregate</p>
-          <p>Explore Meta-data</p>
+          <p><a href="#" onclick="group(); return false;">Group</a></p>
+          <p><a href="#" onclick="segregate(); return false;">Segregate</a></p>
+          <p><a href="#" onclick="doe(); return false;">Explore Meta-data</a></p>
           <p>Annotate</p>
           <p><b>Chart Editing</b></p>
           <p>Mouse-over</p>

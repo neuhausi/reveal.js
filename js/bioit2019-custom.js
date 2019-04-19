@@ -1,4 +1,4 @@
-onReady(function(){
+  var cx;
 
 	var cars = {
       "x" : {
@@ -91,6 +91,57 @@ onReady(function(){
 	
 	//var cxr = new CanvasXpress("canvasr", tooth, cfgr);
 	
-	var cx = new CanvasXpress("canvas", heatmap, cfg);
+	var data = {
+			"renderTo" : "canvas",
+			"data" : heatmap,
+			"config" : cfg
+	}
+
+	var reset = function () {
+		if (cx.segregateVariablesBy.length) {
+			cx.segregateVariablesBy = [];
+		  cx.desegregateVariables(true);
+		}
+		if (cx.segregateSamplesBy.length) {
+			cx.segregateSamplesBy = [];
+		  cx.desegregateSamples();
+		}
+		cx.masterReset();
+		if (cx.isDOE) {
+		  cx.removeDOE();
+		}
+		if (cx.isGroupedData) {
+		  cx.ungroupSamples();
+		}
+		while (CanvasXpress.stack[cx.target].afterRender.length > 1) {
+			CanvasXpress.stack[cx.target].afterRender.pop();
+		}
+		//cx.draw();
+	}
+	
+	var cluster = function () {
+		reset();
+		cx.clusterVariables();
+		cx.clusterSamples();
+	}
+	
+	var group = function () {
+		reset();
+		cx.groupSamples(['Treatment']);
+	}
+
+	var segregate = function () {
+		reset();
+		cx.segregateVariables(['Type']);
+	}
+	
+	var doe = function () {
+		reset();
+		cx.createDOE();
+	}
+	
+onReady(function(){
+	
+	cx = new CanvasXpress("canvas", heatmap, cfg);
 
 });
