@@ -2,15 +2,27 @@
   <section>
     <h3>CanvasXpress in R Console</h3>
     <pre>
-      <code class="hljs R" style="line-height:20px; font-size:large; max-height:300px;">
-data = t(iris[,1:4])
-varAnnot = as.matrix(iris[,5])
-colnames(varAnnot) = "Species"
-canvasXpress(t(data), varAnnot=varAnnot, scatterPlotMatrix=1, colorBy="Species")
+      <code class="hljs R" style="line-height:20px; font-size:x-large; height:810px;">
+
+
+
+
+  library(canvasXpress)
+  data = t(iris[,1:4])
+  varAnnot = as.matrix(iris[,5])
+  colnames(varAnnot) = "Species"
+  canvasXpress(
+    data = t(data),
+    varAnnot = varAnnot,
+    colorBy = "Species",
+    graphType = "Scatter2D",
+    scatterPlotMatrix = TRUE,
+    theme = "CanvasXpress"
+  )
       </code>
     </pre>
-    <div style="position:relative; top:-150px;" class="cx-canvas">
-      <canvas class="CanvasXpress" width=500 height=500 id="scatterPlotMatrix" data-src="http://localhost:8001/images/scatterPlotMatrix.png"></canvas>
+    <div style="position:relative; top:-530px; left: 220px;" class="cx-canvas">
+      <canvas class="CanvasXpress" width=500 height=500 id="scatterPlotMatrix" data-src="http://localhost:8001/data/splomIris.json"></canvas>
     </div>          
   </section>
   <section>
@@ -23,13 +35,6 @@ canvasXpress(t(data), varAnnot=varAnnot, scatterPlotMatrix=1, colorBy="Species")
     <h3><a href="https://github.com/neuhausi/canvasXpress">Github</a>: CanvasXpress for R</h3>
     <div style="width:80%; margin:auto;">
       <img src="./images/github.png">
-      <h3>Installation</h3>
-      <p align="left" style="font-size:x-large;">canvasXpress is available for installation from <a href="https://cran.r-project.org/web/packages/canvasXpress/index.html">CRAN</a> or you can install the latest version of canvasXpress from GitHub as follows:</p>
-      <pre>
-        <code class="hljs R" style="line-height:20px; font-size:large; max-height:800px;">
-devtools::install_github('neuhausi/canvasXpress')              
-        </code>
-      </pre>
     </div>
   </section>
   <section>

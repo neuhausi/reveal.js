@@ -48,4 +48,51 @@ shinyUI(pageWithSidebar(
       </code>
     </pre>          
   </section>
+  <section>
+    <h3>More Elaborate Shiny App</h3>
+    <div style="width:60%; margin:auto;">
+      <img src="./images/shinyApp.png">
+    </div>
+  </section>
+  <section>
+    <h3>Select Functions</h3>
+    <pre>
+      <code class="hljs R" style="line-height:12px; font-size:xx-small; max-height:800px;">
+canvasXpress(
+  data                    = cx,
+  varAnnot                = va,
+  decorations             = d,
+  graphType               = "Scatter2D",
+  theme                   = "CanvasXpress",
+  colorBy                 = "Group",
+  colors                  = colors,
+  legendPosition          = "right",
+  showDecorations         = TRUE,
+  sizeBy                  = "LogInt",
+  sizes                   = c(4, 10, 12, 14, 16, 18, 20, 22, 24, 26),
+  sizeByShowLegend        = TRUE,
+  title                   = title,
+  subtitle                = subtitle,
+  xAxis                   =  c("logFC", ""),
+  yAxis                   = c("NegativeLogP", ""),
+  yAxisTitle              = "-log10(P.Value)",
+  subtitleScaleFontFactor = 0.5,
+  width                   = 400,
+  height                  = 400,
+  events                  = JS("{'select': function(o, e, t){ var g = $('#genes'); g[0].selectize.clear(); g[0].selectize.addItems(o.y.vars); }}")
+)        
+      </code>
+    </pre>
+    <pre>
+      <code class="hljs" style="line-height:20px; font-size:x-large; max-height:800px;">
+        {
+          'select' : function(o, e, t) { 
+                       var g = $('#genes'); 
+                       g[0].selectize.clear(); 
+                       g[0].selectize.addItems(o.y.vars);
+                     }
+        }
+      </code>
+    </pre>
+  </section>
 </section>

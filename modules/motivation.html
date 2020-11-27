@@ -2,9 +2,9 @@
   <section data-menu-title="Motivation">
     <div class="circle-container" style="height: 100%;">
       <img class="outer key" src="./images/key.png">
-      <div class="outer circle circle72"><span>Scalable</span></div>
-      <div class="outer circle circle144"><span>Table</span></div>
-      <div class="outer circle circle216"><span>Filter</span></div>
+      <div class="outer circle circle72"><span>Interactive</span></div>
+      <div class="outer circle circle144"><span>Rich UI</span></div>
+      <div class="outer circle circle216"><span>Scalable</span></div>
       <div class="outer circle circle288"><span>Auditable</span></div>
       <div class="outer circle circle360"><span>Custom</span></div>
     </div>
@@ -14,5 +14,11 @@
    <div>
      <img class="spin" src="./images/canvas-svg.png">
    </div>
-  </section>          
+  </section>
+  <section data-transition="convex-in fade-out">
+    <div style="position:relative; top:-100px;" class="cx-canvas">
+      <canvas class="CanvasXpress" width=500 height=500 id="hugeCanvas" data-src="http://localhost:8001/data/hugeCanvas.json"></canvas>
+    </div>
+    <span class="menu-title" style="display: none;">Huge Heatmap</span>
+  </section>    
 </section>

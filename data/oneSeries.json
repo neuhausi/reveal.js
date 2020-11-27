@@ -1,0 +1,16 @@
+{
+  "renderTo": "oneSeries",
+  "data": {
+    "y": {
+      "vars": ["Gene1"],
+      "smps": ["Smp1","Smp2","Smp3"],
+      "data": [
+        [10,35,88]
+      ]
+    }
+  },
+  "config": {
+    "graphType": "Bar",
+    "remoteTransitionEffect": "fade"
+  }
+}

@@ -1,0 +1,219 @@
+<!doctype html>
+<html>
+  <head>
+  
+    <meta charset="utf-8">
+    <meta name="description" content="Networks with CanvasXpress">
+    <meta name="author" content="Isaac Neuhaus">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>CanavasXpress 2020</title>
+
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/sky.css">
+
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="lib/css/zenburn.css">
+
+    <!-- Css for this presentation -->
+    <link rel="stylesheet" href="./modules/modules.css">
+
+    <!-- Printing and PDF exports -->
+    <script>
+      var link = document.createElement( 'link' );
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+      document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
+    
+    <!-- CanvasXpress --> 
+    <!-- Must be specified last to avoid conflicts with CSS -->
+    <!-- 
+    <link rel="stylesheet" href="https://canvasxpress.org/dist/canvasXpress.css" type="text/css">
+    <script type="text/javascript" src="https://canvasxpress.org/dist/canvasXpress.min.js"></script>
+    -->
+    <link rel="stylesheet" href="http://localhost:8000/build/canvasXpress.css" type="text/css"/>
+    <script type="text/javascript" src="http://localhost:8000/build/js/canvasXpress.init.js"></script>
+    <script type="text/javascript" src="http://localhost:8000/build/js/canvasXpress.globals.js"></script>
+    <script type="text/javascript" src="http://localhost:8000/build/js/canvasXpress.dom.js"></script>
+    <script type="text/javascript" src="http://localhost:8000/build/js/canvasXpress.svg.js"></script>
+    <script type="text/javascript" src="http://localhost:8000/build/js/canvasXpress.interface.js"></script>
+    <script type="text/javascript" src="http://localhost:8000/build/js/canvasXpress.save.js"></script>
+    <script type="text/javascript" src="http://localhost:8000/build/js/canvasXpress.config.js"></script>
+    <script type="text/javascript" src="http://localhost:8000/build/js/canvasXpress.date.js"></script>
+    <script type="text/javascript" src="http://localhost:8000/build/js/canvasXpress.text.js"></script>
+    <script type="text/javascript" src="http://localhost:8000/build/js/canvasXpress.time.js"></script>
+    <script type="text/javascript" src="http://localhost:8000/build/js/canvasXpress.color.js"></script>
+    <script type="text/javascript" src="http://localhost:8000/build/js/canvasXpress.attributes.js"></script>
+    <script type="text/javascript" src="http://localhost:8000/build/js/canvasXpress.algorithm.js"></script>
+    <script type="text/javascript" src="http://localhost:8000/build/js/canvasXpress.primitives.js"></script>
+    <script type="text/javascript" src="http://localhost:8000/build/js/canvasXpress.utilsGeneral.js"></script>
+    <script type="text/javascript" src="http://localhost:8000/build/js/canvasXpress.utilsPlot.js"></script>
+    <script type="text/javascript" src="http://localhost:8000/build/js/canvasXpress.utilsConfig.js"></script>
+    <script type="text/javascript" src="http://localhost:8000/build/js/canvasXpress.utils3d.js"></script>
+    <script type="text/javascript" src="http://localhost:8000/build/js/canvasXpress.utilsApi.js"></script>
+    <script type="text/javascript" src="http://localhost:8000/build/js/canvasXpress.utilsDimension.js"></script>
+    <script type="text/javascript" src="http://localhost:8000/build/js/canvasXpress.utils.js"></script>
+    <script type="text/javascript" src="http://localhost:8000/build/js/canvasXpress.legend.js"></script>
+    <script type="text/javascript" src="http://localhost:8000/build/js/canvasXpress.filter.js"></script>
+    <script type="text/javascript" src="http://localhost:8000/build/js/canvasXpress.cluster.js"></script>
+    <script type="text/javascript" src="http://localhost:8000/build/js/canvasXpress.sort.js"></script>
+    <script type="text/javascript" src="http://localhost:8000/build/js/canvasXpress.numeric.js"></script>
+    <script type="text/javascript" src="http://localhost:8000/build/js/canvasXpress.jLouvain.js"></script>
+    <script type="text/javascript" src="http://localhost:8000/build/js/canvasXpress.math.js"></script>
+    <script type="text/javascript" src="http://localhost:8000/build/js/canvasXpress.layout.js"></script>
+    <script type="text/javascript" src="http://localhost:8000/build/js/canvasXpress.viewport.js"></script>
+    <script type="text/javascript" src="http://localhost:8000/build/js/canvasXpress.menu.js"></script>
+    <script type="text/javascript" src="http://localhost:8000/build/js/canvasXpress.links.js"></script>
+    <script type="text/javascript" src="http://localhost:8000/build/js/canvasXpress.tooltip.js"></script>
+    <script type="text/javascript" src="http://localhost:8000/build/js/canvasXpress.toolbar.js"></script>
+    <script type="text/javascript" src="http://localhost:8000/build/js/canvasXpress.configurator.js"></script>
+    <script type="text/javascript" src="http://localhost:8000/build/js/canvasXpress.code.js"></script>
+    <script type="text/javascript" src="http://localhost:8000/build/js/canvasXpress.bin.js"></script>
+    <script type="text/javascript" src="http://localhost:8000/build/js/canvasXpress.dataexplorer.js"></script>
+    <script type="text/javascript" src="http://localhost:8000/build/js/canvasXpress.datafilter.js"></script>
+    <script type="text/javascript" src="http://localhost:8000/build/js/canvasXpress.datatable.js"></script>
+    <script type="text/javascript" src="http://localhost:8000/build/js/canvasXpress.resizer.js"></script>
+    <script type="text/javascript" src="http://localhost:8000/build/js/canvasXpress.motion.js"></script>
+    <script type="text/javascript" src="http://localhost:8000/build/js/canvasXpress.drag.js"></script>
+    <script type="text/javascript" src="http://localhost:8000/build/js/canvasXpress.key.js"></script>
+    <script type="text/javascript" src="http://localhost:8000/build/js/canvasXpress.select.js"></script>
+    <script type="text/javascript" src="http://localhost:8000/build/js/canvasXpress.dendrogram.js"></script>
+    <script type="text/javascript" src="http://localhost:8000/build/js/canvasXpress.canvas.js"></script>
+    <script type="text/javascript" src="http://localhost:8000/build/js/canvasXpress.cleanup.js"></script>
+    <script type="text/javascript" src="http://localhost:8000/build/js/canvasXpress.events.js"></script>
+    <script type="text/javascript" src="http://localhost:8000/build/js/canvasXpress.animation.js"></script>
+    <script type="text/javascript" src="http://localhost:8000/build/js/canvasXpress.example.js"></script>
+    <script type="text/javascript" src="http://localhost:8000/build/js/canvasXpress.data.js"></script>
+    <script type="text/javascript" src="http://localhost:8000/build/js/canvasXpress.dataUtils.js"></script>
+    <script type="text/javascript" src="http://localhost:8000/build/js/canvasXpress.random.js"></script>
+    <script type="text/javascript" src="http://localhost:8000/build/js/canvasXpress.fx.js"></script>
+    <script type="text/javascript" src="http://localhost:8000/build/js/canvasXpress.remote.js"></script>
+    <script type="text/javascript" src="http://localhost:8000/build/js/canvasXpress.graph.js"></script>
+    <script type="text/javascript" src="http://localhost:8000/build/js/canvasXpress.axis.js"></script>
+    <script type="text/javascript" src="http://localhost:8000/build/js/canvasXpress.pie.js"></script>
+    <script type="text/javascript" src="http://localhost:8000/build/js/canvasXpress.venn.js"></script>
+    <script type="text/javascript" src="http://localhost:8000/build/js/canvasXpress.correlation.js"></script>
+    <script type="text/javascript" src="http://localhost:8000/build/js/canvasXpress.scatter2d.js"></script>
+    <script type="text/javascript" src="http://localhost:8000/build/js/canvasXpress.scatter3d.js"></script>
+    <script type="text/javascript" src="http://localhost:8000/build/js/canvasXpress.onedplot.js"></script>
+    <script type="text/javascript" src="http://localhost:8000/build/js/canvasXpress.network.js"></script>
+    <script type="text/javascript" src="http://localhost:8000/build/js/canvasXpress.genome.js"></script>
+    <script type="text/javascript" src="http://localhost:8000/build/js/canvasXpress.circular.js"></script>
+    <script type="text/javascript" src="http://localhost:8000/build/js/canvasXpress.leaflet.js"></script>
+    <script type="text/javascript" src="http://localhost:8000/build/js/canvasXpress.images.js"></script>
+    <script type="text/javascript" src="http://localhost:8000/build/js/canvasXpress.doc.js"></script>
+    <script type="text/javascript" src="http://localhost:8000/build/js/canvasXpress.react.js"></script>
+
+  </head>
+  
+  <body>
+  
+    <div class="reveal">
+      <div class="slides">
+        <section data-transition="convex-in fade-out" data-background-image="./images/vL5c6W.png">
+          <h3 class="menu-title">CanvasXpress</h3>
+          <h3>Data Analytics Made Easy</h3>
+          <p><a href="mailto:imnphd@gmail.com">Bristol Myers Squibb - Isaac Neuhaus</a></p>
+        </section>        <!-- Other Libraries -->
+        <section data-external-replace="modules/chartingLibraries.html"></section>
+        <!-- Motivation -->
+        <section data-external-replace="modules/motivation.html"></section>
+        <!-- Outline -->
+        <section data-external-replace="modules/features.html"></section>
+        <!-- Web Tutorial -->
+        <section data-external-replace="modules/webTutorial.html"></section>
+        <!-- R Tutorial -->
+        <section data-external-replace="modules/RTutorial.html"></section>
+        <!-- R-Studio Tutorial -->
+        <section data-external-replace="modules/RStudioTutorial.html"></section>
+        <!-- R-Shiny Tutorial -->
+        <section data-external-replace="modules/RShiny.html"></section>
+        <!-- FlexDashboard Tutorial -->
+        <section data-external-replace="modules/FlexDashboardTutorial.html"></section>
+        <!-- UI Tutorial -->
+        <section data-external-replace="modules/UITutorial.html"></section>
+        <!-- Formats -->
+        <section data-external-replace="modules/formats.html"></section>
+        <!-- Network Formats -->
+        <section data-external-replace="modules/networkFormats.html"></section>
+        <!-- Loading data -->
+        <section data-external-replace="modules/loadData.html"></section>
+        <!-- User Experience Tutorial -->
+        <section data-external-replace="modules/UserExperience.html"></section>
+        <!-- Reproducible Research Tutorial -->
+        <section data-external-replace="modules/ReproducibleResearch.html"></section>
+        <!-- General -->
+        <section data-transition="convex-in fade-out">
+          <h2>Acknowledgement</h2>
+          <p style="font-size: xx-large">Connie Brett: Co-developer and Maintainer of the R package</p>
+        </section>
+        <!-- General -->
+        <section data-transition="convex-in fade-out">
+          <h1>Thank you!</h1>
+          <p><a href="mailto:imnphd@gmail.com">Bristol Myers Squibb - Isaac Neuhaus</a></p>
+        </section>
+      </div>
+    </div>
+
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.js"></script>
+
+    <script>
+    
+      Reveal.initialize({
+        
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+
+        transition: 'linear', // default/cube/page/concave/zoom/linear/fade/none,
+        transitionSpeed: 'slow',
+
+        // Zooming config
+        zoomKey: 'alt',
+        zoomLevel: 1,
+        
+        // Keyboard
+        keyboard: {
+          27 : null // Needed by canvasXpres to reset the graph
+        },
+                
+        dependencies: [
+          { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+          { src: 'plugin/search/search.js', async: true },
+          { src: 'plugin/zoom-js/zoom.js', async: true },
+          { src: 'plugin/menu/menu.js' },
+          { src: 'plugin/toolbar/toolbar.js' },
+          { src: 'plugin/external/external.js', condition: function() { return !!document.querySelector( '[data-external],[data-external-replace]' ); } }, 
+          { src: 'plugin/canvasXpress/canvasXpress.js' }
+        ]
+      });
+
+      Reveal.addEventListener( 'slidechanged', function( event ) {
+      	var animations = ["outer", "spin", "typewriter"];
+      	if (event.currentSlide && event.currentSlide.classList) {
+      	  for (var i = 0; i < animations.length; i++) {
+      	  	var anm = animations[i];
+            // This will animate entrance and exit
+      	  	//var els = document.querySelectorAll('.' + anm);
+      	  	var els = event.currentSlide.querySelectorAll('.' + anm);
+            for (var j = 0; j < els.length; j++) {
+              els[j].classList.remove(anm);
+              void els[j].offsetWidth;
+              els[j].classList.add(anm);
+            }
+      	  }	
+      	}
+      });
+      
+    </script>
+    
+  </body>
+  
+</html>

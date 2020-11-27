@@ -13,14 +13,14 @@
         var cX = new CanvasXpress({
           "renderTo": "canvasId", 
           "data": {
-                    "y": {
-                       "vars": [ "Gene1"],
-                       "smps": [ "Smp1", "Smp2", "Smp3" ],
-                       "data": [ [ 10, 35, 88 ] ]
-                    }
+            "y": {
+              "vars": [ "Gene1"],
+              "smps": [ "Smp1", "Smp2", "Smp3" ],
+              "data": [ [ 10, 35, 88 ] ]
+            }
           },
           "config": {
-                    "graphType": "Bar"
+            "graphType": "Bar"
           }
         });
       });
@@ -34,7 +34,9 @@
 &lt;/html&gt;
       </code>
     </pre>
-    <a href="https://canvasxpress.org/html/documentation.html"><img style="position:relative; left:300px; top:-300px; width:200px;" src="./images/cX-oneSeries-1.png"></a>            
+    <div style="position:relative; left:230px; top:-480px; width:400px;" class="cx-canvas">
+      <canvas class="CanvasXpress" width=400 height=400 id="oneSeries" data-src="http://localhost:8001/data/oneSeries.json"></canvas>
+    </div>
   </section>
   <section>
     <h3>Data is 'L' shaped</h3>
@@ -87,13 +89,47 @@
     </pre>          
   </section>                    
   <section>
-    <h3>Visualization</h3>
-    <div style="font-size:smaller;">
-      <p align="left">May use different paradigm than other charting JS libraries</p>
-      <p align="left">You may include data not needed in the initial plot... Why?</p>
-    </div>
-    <div style="position:relative; top:-100px;" class="cx-canvas">
-      <canvas class="CanvasXpress" width=500 height=500 id="twoSeries" data-src="http://localhost:8001/data/twoSeries.json"></canvas>
+    <h3>Two Series Example</h3>
+    <pre>
+      <code class="hljs html" style="line-height:16px; font-size:medium; max-height:800px;">
+&lt;html&gt;
+
+  &lt;head&gt;  
+    &lt;link rel="stylesheet" href="path-to-canvasXpress.css" type="text/css"/&gt;
+    &lt;script type="text/javascript" src="path-to-canvasXpress.min.js"&gt;&lt;/script&gt;
+    &lt;script&gt;
+      onReady(function () { 
+        var cX = new CanvasXpress({
+          "renderTo": "canvasId", 
+          "data": {
+            "y": {
+              "vars": [ "Variable1", "Variable2"],
+              "smps": [ "Sample1", "Sample2", "Sample3" ],
+              "data": [ [ 10, 20, 30 ],
+                        [ 35, 25, 15 ] ]
+            },
+            "x": {
+              "Tissue" : ["Kidney", "Lung", "Heart"]
+            }
+          },
+          "config": {
+            "graphType": "Bar",
+            "smpOverlays": ["Tissue"]
+          }
+        });
+      });
+    &lt;/script&gt;
+  &lt;/head&gt;
+  
+  &lt;body&gt;
+    &lt;canvas id="canvasId" width="540" height="540"&gt;&lt;/canvas&gt;    
+  &lt;/body&gt;
+  
+&lt;/html&gt;
+      </code>
+    </pre>
+    <div style="position:relative; left:230px; top:-480px; width:400px;" class="cx-canvas">
+      <canvas class="CanvasXpress" width=400 height=400 id="twoSeries" data-src="http://localhost:8001/data/twoSeries.json"></canvas>
     </div>
   </section>
 </section>

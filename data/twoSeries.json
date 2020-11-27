@@ -1,22 +1,21 @@
 {
   "renderTo": "twoSeries",
   "data": {
-     "y": {
-       "vars": [ "Variable1", "Variable2" ],
-       "smps": [ "Sample1", "Sample2", "Sample3" ],
-       "data": [ [ 10, 20, 30 ],
-               [ 35, 25, 15 ] ]
-     },
-     "x": {
-       "Tissue": [ "Kidney", "Lung", "Heart" ],
-       "Donor":  [ "D1",     "D1",   "D2" ]
-     },
-     "z": {
-       "Symbol":  [ "AAA", "BBB" ],
-       "Pathway": [ "P1",  "P2" ]
-     }
-   },
-   "config": {
-     "graphType": "Bar"
-   }
+    "y": {
+      "vars": ["Variable1","Variable2"],
+      "smps": ["Sample1","Sample2","Sample3"],
+      "data": [
+        [10,20,30],
+        [35,25,15]
+      ]
+    },
+    "x": {
+      "Tissue": ["Kidney","Lung","Heart"]
+    }
+  },
+  "config": {
+    "graphType": "Bar",
+    "smpOverlays": ["Tissue"],
+    "remoteTransitionEffect": "fade"
+  }
 }
